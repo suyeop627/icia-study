@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자(Operation)</title>
+</head>
+<!--body-->
+<body>
+    
+</body>
+<!--script-->
+<script>
+/*
+    연산자 : 프로그램을 만들 때 변수나 값의 연산을 위해 사용되는 부호
+        + : 더하기
+        - : 빼기
+        * : 곱하기
+        / : 나누기
+
+        % : 나머지
+        ++ : 증가 - 변수에 1씩 더하는 것
+        -- : 감소 - 변수에 1씩 빼는 것
+*/
+    var a = 3 ;
+    var b = 1.5;
+    var c = a * b;
+
+    //console창에 a, b, c를 출력해보기
+
+    console.log( a );
+    console.log( b );
+    console.log( c );
+
+    // %, ++, --
+    // 7 나누기 3 => 몫 2, 나머지 1
+    //7 %3 =>
+
+
+    var d =7 ;
+    var e =3;
+    var f=d % 2
+
+    console.log("d % e =" + f);
+    d++;
+    d++;
+    console.log("d++를 실행한 후 d의 값 : " + d);
+
+    e--;
+    console.log("e--를 실행한 후 e의 값 : " + e)
+
+    // (2) 자바 스크립트에 내장된 수학 함수
+    //      Math.sqrt(z) : z에 대한 제곱근
+    //      Math.abs(y-x) : y에서 x를 빼나 값의 절대값
+    //      z.toFixed(2) : z를 소숫점 2자리까지만 표시
+    //      parseInt(y) : y를 소숫점을 버리고 정수로 출력
+
+
+    // Q1. c에 대한 제곱근
+    console.log("c에 대한 제곱근 : " + Math.sqrt(c));
+    
+    // Q2.b-a의 절대값
+    console.log("b-a의 절대값 : " + Math.abs(b-a));
+   
+    // Q3. c를 소숫점 2자리까지 표시
+    console.log("c를 소숫점 2자리까지 표시 : " + c.toFixed(2));
+    
+    // Q4. b를 정수로 표시
+    console.log("b를 정수로 표시 : " + parseInt(b));
+
+</script>
+</html>

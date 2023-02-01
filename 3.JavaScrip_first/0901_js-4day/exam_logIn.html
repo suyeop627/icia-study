@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="3">
+  <link rel="shortcut icon" href="favicon.png">
+  <title>LogIn Page</title>
+  <style>
+
+  </style>
+</head>
+
+<!--body-->
+
+<body>
+
+  <div>
+    <span>ID :</span>
+    <input id="idInput" type="text">
+  </div>
+  <br>
+  <div>
+    <span>PW :</span>
+    <input id="pwdInput" type="password">
+    <button onclick=check()>로그인</button>
+  </div>
+
+
+</body>
+<!--script-->
+<script>
+
+  const idInput = document.getElementById("idInput")
+  const pwdInput = document.getElementById("pwdInput")
+
+  const savedID = "김수엽"
+  const savedPWD = "1234"
+
+function check(){
+
+if(idInput||pwdInput =="")
+
+    if (idInput.value =="") {
+      alert("ID를 입력해주세요.")
+    }
+    else if (pwdInput.value=="") {
+      alert("비밀번호를 입력해주세요.")
+      return;
+    }
+
+
+
+else if(idInput.value != "abcd"){
+  alert("아이디가 틀립니다")
+  }
+  else if(pwdInput.value != "1234"){
+  alert(" 비밀번호가 틀립니다")
+  }
+
+
+  else {
+    alert("로그인 완료! main.html로 이동합니다")
+  location.href = "main.html";
+  }
+
+  }
+
+
+</script>
+
+</html>

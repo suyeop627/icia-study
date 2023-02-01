@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+     a.a1{
+        display : block;
+     }
+     li {        
+        display: inline;
+    }    
+    span {
+        width : 100px;
+        height : 100px;
+        padding : 5px;
+        border : 1px solid blue;
+        background-color: yellow;
+    }
+    span.a{
+        display: inline;
+    }
+    span.b{
+        display: inline-block;
+    }
+    span.c{
+        display: block;
+    }
+
+
+    #container div {
+        background-color: yellow;
+        width: 200px;
+        height: 100px;
+        border: 1px dashed;
+    }
+    .b1 {
+        display: none;
+    }
+    .b2 { 
+        visibility: hidden;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <h3>블록 형식으로 보이게 하기</h3>
+    <a class="a1" href="#">링크1</a>
+    <a class="a1" href="#">링크1</a>
+    <a class="a1" href="#">링크1</a>
+    <h3>인라인 형식으로 보이게 하기</h3>
+    <ul>
+        <li><a href="#">1</a></li> <!--list를 인라인으로 하면 앞에 항목표시 없어짐/들여쓰기는 유지됨-->
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+    </ul>
+    <hr>
+    <h3>inline vs inline-block vs block</h3>
+    <h4>inline</h4>
+    <div>
+        Lorem
+        <span class="a">ipsum</span>
+         <span class="a">dolor</span>  
+         it amet, consectetur adipiscing elit. 
+    </div>
+    <h4>inline-block</h4>
+    <div>
+        Lorem
+        <span class="b">ipsum</span>
+         <span class="b">dolor</span> 
+         sit amet, consectetur adipiscing elit. 
+    </div>
+    <h4>block</h4>
+    <div>
+        Lorem
+        <span class="c">ipsum</span>
+         <span class="c">dolor</span> 
+         sit amet, consectetur adipiscing elit. 
+    </div>
+    <hr>
+    <div id="container">
+        <h3>display:none</h3>
+        <div class="b1">보이나요?</div>
+        <div id="d1">이건 더미...</div>
+        <h2> visiblity:hidden</h2>
+        <div class="b2">보이나요?</div>
+        <div id="d2">이건 더미...</div>
+    </div>
+  
+</body>
+</html>

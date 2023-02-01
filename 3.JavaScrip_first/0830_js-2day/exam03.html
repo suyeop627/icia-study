@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="">
+<link rel="shortcut icon" href="favicon.png">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+
+    <h1>임의의 수를 입력받아 1부터 입력받는 수까지의 <br>
+        합을 브라우저에 출력하는 프로그램을 작성하시오.
+    </h1>
+    <input id="nin2" type="number"><button onclick="exam2()">입력</button><br>
+    <span id="nout2"></span> 
+
+
+
+
+</body>
+<!--script-->
+<script>
+    const in2 = document.getElementById("nin2");
+    const out2 = document.getElementById("nout2");
+
+    function exam2() {
+        let in2_v = in2.value;
+        let sum = 0; //누적값 저장 변수
+
+        for(let i = 1; i<=in2_v; i++){   //for( 카운터(초기화); 횟수; 증가){}
+            sum+=i;
+            
+        }
+        out2.innerHTML = `${in2_v}까지의 누적합은 ${sum}입니다.`;     //백틱(`),  ${} 사용
+        in2.value="";
+    }
+
+
+
+
+
+
+
+
+</script>
+</html>

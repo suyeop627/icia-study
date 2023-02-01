@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="7">
+<title></title>
+<style>
+  *{
+    padding : 0;
+    margin : 0;
+  }
+  .header {
+    position : fixed;
+    top : 0;
+    width : 100%;
+    height : 60px;
+    text-align: center;
+    line-height: 60px;  /*flex안쓸경우엔 inline height 써야 세로 중앙 위치.*/
+    background-color: white;
+  }
+  .section>.box {
+    height: 500px;
+  }
+  .section>.box>p {
+
+    padding : 80px 20px;
+  }
+  .section > .box:nth-child(odd){
+    background-color: aqua;
+    color : black;
+  }
+  .section>.box:nth-child(even){
+    background-color: crimson;
+    color : white;
+  }
+</style>
+</head>
+
+<!--body-->
+<body>
+  <div class="header">
+    <h1>무한 스크롤</h1>
+  </div>
+  <div class="section">
+    <div class="box">
+      <p>1번 영역</p>
+    </div>
+    <div class="box">
+      <p>2번 영역</p>
+    </div>
+  </div>
+</body>
+<!--script-->
+<script>
+  let count = 2; //영역 번호
+  const s_area = document.querySelector(".section");
+  
+  window.onscroll = function(e){   
+    if(count >= 10){    //10개 초과하여 만들지 않도록.
+    return;
+  }
+
+    let wih = window.innerHeight;
+    let wsy = window.scrollY;
+    let bo = document.body.offsetHeight;
+    
+    console.log(wih, wsy, bo);
+
+    if((wih + wsy)>= bo){
+      let addElem = document.createElement("div");
+      addElem.classList.add("box");
+      addElem.innerHTML = `<p>${++count}번째 영역</p>`
+      s_area.appendChild(addElem);
+    }
+  }
+
+</script>
+</html>

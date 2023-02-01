@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="2">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+  <h1>증가연산자(전위)</h1> 
+  <p>z : <span  id="be"></span></p>
+  <p>x : <span  id="af"></span></p>
+  <h1>증가연산자(후위)</h1> 
+  <p>z : <span  id="be2"></span></p>
+  <p>y : <span  id="af2"></span></p>
+</body>
+<!--script-->
+<script>
+  const b = document.getElementById("be");
+  const a = document.getElementById("af");
+
+  const b2 = document.getElementById("be2");
+  const a2= document.getElementById("af2");
+
+
+
+// ++연산자의 위치에 따라 다른 연산자와의 연산 순서가 바뀔 수 있다. 주의 필요.
+
+
+  let x= 10, y = 10, z = 0 ;    //변수 한번에 여러개 작성하기도 가능
+  z = 5 +  ++x;
+  b.innerHTML = z;        //x의 값이 증가하고나서, z에 값이 들어감
+  a.innerHTML = x;    
+  
+  z = 5 + y++;              //y의 값이 증가하기 전에, z 에 값이 들어감
+  b2.innerHTML = z;
+  a2.innerHTML = y;
+
+/*위의 구분이 헷갈리면 구분해서 작성해도 됨
+++x;
+z=5+x;
+*/
+
+</script>
+</html>

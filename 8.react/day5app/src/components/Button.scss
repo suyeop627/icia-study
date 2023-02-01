@@ -1,0 +1,85 @@
+//변수 선언
+$blue : #228be6;
+$gray : #495057;
+$pink: #f06595;
+
+@mixin btn-color($color) {
+  background: $color;
+
+  &:hover {
+    //lighten : sass의 내장 함수로, 색과 배율을 인자로 받음
+    background: lighten($color, $amount: 10%);
+  }
+
+  //버튼이 클릭됐을때
+  &:active {
+    //darken : sass의 내장함수로, 색과 배율을 인자로 받음
+    background: darken($color, $amount: 10%);
+  }
+
+  //옵션에 의한 처리
+  &.outline {
+    color: $color;
+    background: none;
+    border: 1px solid $color;
+
+    &:hover {
+      background-color: $color;
+      color: white;
+    }
+  }
+}
+
+@mixin btn-size($h, $fsize) {
+  height: $h;
+  line-height: $h;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: $fsize;
+}
+
+.Button {
+  display: inline-flex;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  //아래 부분을 단계별로 변경
+
+
+  //@mixin에 있는 것을 가져올 때는 @include 사용.
+  &.large {
+    @include btn-size(3rem, 1.25rem);
+  }
+
+  &.medium {
+    @include btn-size(2.25rem, 1rem);
+  }
+
+  &.small {
+    @include btn-size(1.75rem, 0.875rem);
+  }
+
+
+  &.blue {
+    @include btn-color($blue);
+  }
+
+  &.gray {
+    @include btn-color($gray);
+  }
+
+  &.pink {
+    @include btn-color($pink);
+  }
+
+
+
+  // 같은 요소가 연달아 있을 때, 두번째 요소에 margin 적용
+  &+& {
+    margin-left: 1rem;
+  }
+}

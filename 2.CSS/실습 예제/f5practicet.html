@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>프리샘 레이아웃짜기</title>
+            <!-- 여기에 CSS 링크-->
+            <style>
+          
+                li { list-style-type: none; float :left}
+                *{padding : 0 ; margin : 0 auto;}
+                header {width : 960px; height : 105px;}
+                section {width : 960px; height : 1220px;}
+                footer{width : 960px; height : 205px;}            
+                header>div#h_top { height : 35px;}
+                header>div#h_bottom { height : 70px; }
+                section>div#s_box1 { height : 355px;}
+                section>div#s_box2 { height : 160px;}
+                section>div#s_box3 { height : 125px;}
+                section>div#s_box4 { height : 65px;}
+                section>div#s_box5 { height : 240px;}
+                section>div#s_box5 { height : 155px;}
+                section>div#s_box6 { height : 155px;}
+                footer>div#f_top { height: 60px;}
+                footer>div#f_bottom { height: 145px;}
+
+                /*header*/
+                header>div#h_top{background-color: darkgray;}
+                div.h_left{float : left; 
+                                background-color: black; 
+                                color : white;
+                                padding : 5px;}
+                div#h_top>div#h_top_wrap>nav.t_nav>ul{
+                                float : right;  }
+                div#h_top>div#h_top_wrap>nav.t_nav>ul>li{margin :15px 10px; 
+                                line-height: 5px;} 
+                div#h_bottom>nav.m_nav>ul>li { margin-left : 50px; margin-top : 20px; }
+      
+                /*section*/
+                /*box1*/
+                div#s_box1 { margin-top : 10px;}
+                div#s_box1>div:first-child {float : left; width : 650px ;
+                                             height : 355px; box-sizing: border-box; 
+                                            background-color: orange;}
+                div#s_box1>div:last-child {float : left; width : 310px ; height : 355px;
+                                             box-sizing: border-box; 
+                                            background-color: pink; }
+                
+                div#h_bottom>h1 {display:inline; float : left; }
+
+                /*box2*/
+                div#s_box2 {margin-top : 10px;}
+                div#s_box2>div:nth-child(1){float : left; width : 310px; height : 160px;
+                                            background-color: orange;
+                                            margin-right : 15px;}
+                div#s_box2>div:nth-child(2){float : left; width : 310px; height : 160px;
+                                            background-color: orange;
+                                            margin-right : 15px;}
+                div#s_box2>div:nth-child(3){float : left; width : 310px; height : 160px;
+                                            background-color: orange; }
+                                           
+                /*box3*/                        
+                div#s_box3 {margin-top : 10px; border : 1px solid black;
+                            box-sizing: border-box; height : 125px;}   
+                
+                /*box4*/
+                div#s_box4 {margin-top : 10px; border : 1px solid black;
+                            box-sizing: border-box; height : 65px;}   
+                
+                /*box5*/
+                div#s_box5>div {margin-top : 10px; float : left; width : 475px; 
+                                height : 240px; background-color: lightgray; 
+                                border : 1px solid black;}
+                div#s_box5>div:nth-child(1){margin-right : 10px; box-sizing: border-box;}
+                div#s_box5>div:nth-child(2){box-sizing: border-box;}
+                
+                /*box6*/
+                div#s_box6>div {margin-top : 10px; float : left; width : 232.5px; height : 155px;}
+                div#s_box6>div:nth-child(1){background-color: lightgray; 
+                                            margin-right : 10px; box-sizing: border-box;
+                                            border : 1px solid black;}
+                div#s_box6>div:nth-child(2){background-color: lightgray;
+                                            margin-right : 10px; box-sizing: border-box;
+                                            border : 1px solid black;}
+                div#s_box6>div:nth-child(3){background-color: lightgray;
+                                            margin-right : 10px; box-sizing: border-box;
+                                            border : 1px solid black;}
+                div#s_box6>div:nth-child(4)>ul>li {float : left; box-sizing: border-box; 
+                                                  width : 232.5px; height : 72.5px;  
+                                                  border : 1px solid black;}
+                div#s_box6>div>ul>li:first-child{ box-sizing: border-box;}
+                div#s_box6>div>ul>li:last-child{ box-sizing: border-box; 
+                                                 margin-top : 10px;}   
+                                                 
+                /*footer*/
+                div#f_top {background-color: lightgray; height : 60px;}               
+                div#f_top_wrap>nav.f_nav>ul>li {float: left; margin : 10px; padding-top : 10px;}
+                div#f_top_wrap>div.f_site { float : right; padding : 20px;}
+                div#f_bottom { background-color: darkgray ; height : 145px;}
+                div#f_bottom_wrap>h1 {float : left; padding-top : 30px; margin-right: 80px;}
+                div#f_bottom_wrap>address { padding-top: 30px;}
+            </style>
+        </head>
+    
+        <body>
+            <header>
+                <div id="h_top">
+                    <div id="h_top_wrap">
+                        <div class="h_left">바로가기></div>
+                        <nav class="t_nav">
+                            <ul>
+                                <li>로그인</li>
+                                <li>고객센터</li>
+                                <li>전체메뉴</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div id="h_bottom">
+                    <h1>로고</h1>
+                    <nav class="m_nav">
+                        <ul>
+                            <li>온라인학습방</li>
+                            <li>매거진+</li>
+                            <li>놀이터</li>
+                            <li>이벤트</li>
+                            <li>마이페이지</li>
+                            <li>학부모방</li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            
+            <section>
+                <div id="s_box1">
+                    <div>이미지슬라이더</div>
+                    <div>로그인박스</div>
+                </div>
+                <div id="s_box2">
+                    <div>오늘의퀴즈쇼</div>
+                    <div>프리장터</div>
+                    <div>이벤트</div>
+                </div>
+                <div id="s_box3">주요서비스바로가기</div>
+                <div id="s_box4">공지사항</div>
+                <div id="s_box5">
+                    <div>과학소년</div>
+                    <div>위즈키즈</div>
+                </div>
+                <div id="s_box6">
+                    <div>이용안내</div>
+                    <div>고객센터</div>
+                    <div>올스토리펜자료실</div>
+                    <div>
+                        <ul>
+                            <li>교원진단서비스</li>
+                            <li>본인인증</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <footer>
+                <div id="f_top">
+                    <div id="f_top_wrap">
+                        <nav class="f_nav">
+                            <ul>
+                                
+                                <li>회사소개</li>
+                                <li>개인정보취급방침</li>
+                                <li>서비스약관</li>
+                                <li>제휴문의</li>
+                                <li>이메일수집거부</li>
+                            </ul>
+                        </nav>
+                        <div class="f_site">패밀리사이트</div>
+                    </div>
+                </div>
+                <div id="f_bottom">
+                    <div id="f_bottom_wrap">
+                        <h1>로고</h1>
+                        <address>주소</address>
+                        <p>카피라이트</p>
+                    </div>
+                </div>
+            </footer>
+        </body>
+    </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="2">
+<title></title>
+</head>
+<!--body-->
+<body>
+</body>
+<!--script-->
+<script>
+  function add(){
+    let sum = 1
+    return sum;
+  }
+  function add(x, y){
+    let sum = x + y;
+    return sum;
+  }
+  function add(x){ // 함수이름이 같아도 실행은 됨.하지만,자바스크립트는 가장 마지막에 작성된 동일이름의 함수만 실행됨.
+    let sum = x+1;//parameter와 argument의 개수가 달라도 함수 실행 가능
+    return sum;
+  }
+
+
+  let n1 = add();
+  let n2 = add(5)
+  let n3 = add(4,3);
+  document.write(`함수 호출 인자 없음 : ${n1}<br>`);
+  document.write(`함수 호출 인자 1개 : ${n2}<br>`);
+  document.write(`함수 호출 인자 1개 : ${n3}<br>`);
+  //같은 이름의 메소드를 만드는 기법 : overloading. -> argument로 구분해서 맞는 함수만 호출할 수 있음
+
+
+///////////////////////////////arguments배열 - parameter를 모아서 배열로 저장함.
+  function add2(){
+    let sum =0;
+    for(let i of arguments){
+      sum += i;
+    }
+    return sum;
+  }
+
+  let r1 = add2()
+  let r2 = add2(2);
+  let r3 = add2(5,8);
+  let r4 = add2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+  document.write(`함수 호출 결과 : ${r1}<br>`);
+  document.write(`함수 호출 결과 : ${r2}<br>`);
+  document.write(`함수 호출 결과 : ${r3}<br>`);
+  document.write(`함수 호출 결과 : ${r4}<br>`);
+
+
+
+</script>
+</html>

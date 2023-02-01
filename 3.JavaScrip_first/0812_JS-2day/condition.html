@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문(condition)</title>
+</head>
+<!--body-->
+<body> 
+</body>
+<!--script-->
+<script>
+
+/*
+
+    조건문 : 조건의 결과(true/false)에 따라 다른 코드를 실행하는 구문
+
+    if(num2==0){
+        num2 = 1;
+    } else {
+        num2 = num2;
+    }
+    
+    num2가 0일때, num2를 1로 바꾼다.
+    그렇지 않다면, num2는 그대로 num2를 사용한다.
+
+    
+    삼항연상자로 작성시,
+        num2 = (num2==0) ? 1 : num2;
+
+    
+    만약에 (A라면){
+        B를 실행한다.
+    } 그렇지 않다면 {
+        C를 실행한다.
+    }
+
+    if(conditionA){
+        console.log("B를 실행한다.");
+    } else{
+        console.log("C를 실행한다.");
+    }
+
+
+
+
+
+*/
+
+var isAge = 25;
+var esAge = 23;
+var jiAge = 30;
+
+if(isAge>esAge){
+    console.log("인성씨가 오빠일 것이다.");
+} else {
+    console.log("은서씨가 누나일 것이다.")
+}
+
+var num1 = 5;
+var num2 = 5;
+
+if(num1>num2){
+    console.log("num1이 크다.");
+} else {
+    console.log("num2가 크다.");
+}
+
+//else if
+/*
+if (conditionA) {
+    B를 실행 : 조건 A를 만족할 경우 실행
+} else if(ConditionD){
+    E를 실행 : 조건 D를 만족할 경우 실행
+} else {
+    C를 실행 : 조건 A와 조건 B를 모두 만족하지 않을 경우
+}
+
+
+
+*/
+
+
+
+if(num1>num2){
+    console.log("num1이 크다.");
+} else if(num1<num2){
+    console.log("num2가 크다.");
+} else {
+    console.log("num1과 num2가 같다.");
+}
+
+//시험점수(score)변수를 만들고 점수를 입력한다.
+//내 시험점수가 90점 이상이면 "A학점 입니다." 출력
+//A : 90~100
+//B : 80~89
+//C : 70~79
+//D : 60~69
+//F : 60미만
+
+var score = prompt("점수를 입력해주세요.") ; 
+console.log("제 점수는요 : " +score);
+//prompt();
+
+if(score>=90){
+    console.log("A학점 입니다.");   //90~100
+
+} else if(score>=80){
+    console.log("B학점 입니다.");   //80~89 (위에 if문에 90점이 있기 때문에 89이상의 숫자는 올 수 없음)
+
+} else if(score>=70){
+    console.log("C학점 입니다.");
+
+} else if(score>=60){
+    console.log("D학점 입니다.");
+
+} else {
+    console.log("F학점 입니다.");   //60점 미만
+}
+
+//첫 라인에서부터 내려오면서, 조건 만족하면 더이상 라인을 읽지 않음. 
+//굳이 이상~이하 다 적을 필요 없이 해당하는 구간만 정해 놓으면 됨.
+
+
+
+
+//+++++++https://www.w3schools.com/    프론트앤드 관련 자료 많은 사이트
+</script>
+</html>

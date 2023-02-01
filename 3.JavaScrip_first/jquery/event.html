@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <title></title>
+  <style>
+    div {
+        width: 200px;
+        height: 200px;
+        margin-right: 7px;
+        text-align: center;
+    }
+    #mousezone {
+        background-color: #59b1f6;
+        float: left;
+    }
+    #overzone {
+        background-color: #ffb5b4;
+        float: left;
+    }
+  </style>
+</head>
+<!--body-->
+
+<body>
+  <button id="btn">이벤트 제거</button>
+  <p id="1">클릭하면 글자 색상이 바뀌어요~!</p>
+  <p id="2">클릭하면 글자 색상이 바뀌어요~!</p>
+  <p id="3">클릭하면 글자 색상이 바뀌어요~!</p>
+  <p id="4">클릭하면 글자 색상이 바뀌어요~!</p>
+  <div id="mousezone">마우스 존</div>
+  <div id="overzone">H 오버 존</div>
+  <input type="text" placeholder="아이디">
+  <input type="password" placeholder="비밀번호">
+
+
+  <script>
+    $('input').focus(function () {
+      $(this).css('background-color', 'yellow')
+    });
+    $('input').blur(function () {
+      $(this).css('background-color', 'pink')
+    });
+
+
+  $('#mousezone').mouseenter(function(){
+    $(this).html('mouse over !').css('background-color', 'red');
+  })
+  $('#mousezone').mouseleave(function(){
+    $(this).html('mouse out !').css('background-color', 'yellow');
+  })
+
+  //mouse enter + leave => hover 메서드를 사용, 핸들링은 두개 사용
+  $('#overzone').hover(function(){
+    $(this).html('mouse over !').css('background-color', 'red');
+  }, function(){
+    $(this).html('mouse out !').css('background-color', 'yellow');
+  })
+
+
+
+  </script>
+</body>
+
+</html>

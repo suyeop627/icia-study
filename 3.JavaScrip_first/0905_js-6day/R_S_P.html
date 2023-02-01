@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="4">
+
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    button {
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+    }
+
+    button:hover {
+      background-color: gray;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    .none {
+      background-color: white;
+    }
+
+    .computerPicked {
+      background-color: gray;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<!--body-->
+
+<body>
+  <h1>User</h1>
+  <div id="user">
+    <button onclick=myChoice(1)><img src="rspIMG/r.png"></button>
+    <button onclick=myChoice(2)><img src="rspIMG/s.png"></button>
+    <button onclick=myChoice(3)><img src="rspIMG/p.png"></button>
+  </div>
+  <h1>Computer </h1>
+  <div id="computer">
+    <img src="rspIMG/r.png" id="R_img">
+    <img src="rspIMG/s.png" id="S_img">
+    <img src="rspIMG/p.png" id="P_img">
+  </div>
+
+  <h1 id="result"></h1>
+  <span id="open"></span>
+
+
+
+
+</body>
+<!--script-->
+<script>
+
+  const result = document.getElementById("result")
+  let randomNumber = Math.floor(Math.random() * 3) + 1
+  const open = document.getElementById("open")
+  const computerPick = document.getElementsByClassName("computerPick")
+  console.log(" 컴퓨터 " + randomNumber)
+
+
+
+  // 바위 1  가ㅏ위 2 보 3
+  const rspArr = ["바위", "가위", "보자기"]
+
+  const R_img = document.getElementById("R_img")
+  const S_img = document.getElementById("S_img")
+  const P_img = document.getElementById("P_img")
+
+
+  const imgArr = [R_img, S_img, P_img]
+
+
+  function myChoice(pick) {
+    let myChoice = pick
+    randomNumber = Math.floor(Math.random() * 3) + 1
+    console.log(imgArr[randomNumber - 1])
+    console.log(" 컴퓨터 " + randomNumber)
+
+    imgArr[0].setAttribute("class", "none")
+    imgArr[1].setAttribute("class", "none")
+    imgArr[2].setAttribute("class", "none")
+
+    if (pick == 1) {
+      if (randomNumber == 3) {
+        result.innerHTML = "당신이 졌어요...😏"
+      } else if (randomNumber == 2) {
+        result.innerHTML = "당신이 이겼어요!!😀"
+
+      } else {
+        result.innerHTML = "비겼네요!!🥱"
+      }
+    }
+    else if (pick == 2) {
+      if (randomNumber == 1) {
+        result.innerHTML = "당신이 졌어요...😏"
+      } else if (randomNumber == 3) {
+        result.innerHTML = "당신이 이겼어요!!😀"
+
+      } else {
+        result.innerHTML = "비겼네요🥱"
+      }
+    }
+    else if (pick == 3) {
+      if (randomNumber == 2) {
+        result.innerHTML = "당신이 졌어요...😏"
+      } else if (randomNumber == 1) {
+        result.innerHTML = "당신이 이겼어요!!😀"
+      } else {
+        result.innerHTML = "비겼네요!!🥱"
+      }
+    }
+
+    open.innerHTML = `당신은 ${rspArr[pick - 1]}를, 컴퓨터는 ${rspArr[randomNumber - 1]}를 냈어요!`
+
+    imgArr[randomNumber - 1].classList.add("computerPicked")
+
+
+    console.log(imgArr[randomNumber - 1])
+  }
+
+
+</script>
+
+</html>

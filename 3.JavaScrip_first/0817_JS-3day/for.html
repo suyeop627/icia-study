@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 for문</title>
+</head>
+<!--body-->
+<body> 
+</body>
+<!--script-->
+<script>
+    //오늘은 반복문을 배웁니다 => console.log()샤용해서 10번 출력
+ //java나 다른 언어에서는 작은 따옴표는 한글자만 할때 사용함, 큰따옴표는 문장 또는 단어에 사용
+                                            //자바 스크립트에서는 큰따옴표 작은따옴표 상관 없음. 
+
+                               
+// console.log("오늘은 반복문을 배웁니다"); //console.log(i)를 출력해보면 i의 값의 변화를 확인해볼 수 있음
+
+// for(var i=1; i<=10; i++){
+//    console.log(i);                            
+// }
+
+//for문의 기본 구조
+/*                              초기식, 조건식, 증감식은 세미콜론으로 구분한다. 증감식 뒤에는 세미콜론을 붙이지 않는다.
+    for(초기식 ; 조건식 ; 증감식){
+        실행문
+    }
+
+    1.초기식  [(2.조건식) (3.실행문) (4. 증감식)]
+    
+    1. 초기식은 for문이 실행될 때 한번만 실행됨 var = 1
+    2.초기식을 조건식으로 넘김                   1<=10이 true 인지 확인
+    3. 조건식이 true일때 3.실행문으로 넘김       1<=10, true이므로, 1 출력
+    4. 3.실행문 실행한 후, 4.증감식               1 ++  실행
+    5.2.조건식이 false값이 나올때 까지(10을 초과할때까지) 반복
+        false가 나오면 종료(var에 11이 입력되면 종료)
+
+
+for(var i=1; i<=10; i++){
+    console.log(i+". 오늘은 반복문을 배웁니다");   }
+
+*/
+
+
+//덧셈을 위한 변수 sum 선언
+var sum=0;                       
+//for문을 사용해서 1부터 10까지의 합을 sum에 넣어보시오.
+
+ for(var i=1; i<=10; i++ ){
+     console.log("sum :" + sum)
+    console.log("i :" + i)
+  
+     sum=sum+i;      //기존에 있던 sum값에 i값을 더한 것을 다시 sum에 대입.
+    
+     document.write(i);
+    if(i<10){
+        document.write("+")
+    } else{
+        document.write("=")
+    }            
+  
+ }
+ console.log("sum : "+sum)
+ document.write(sum)
+
+
+</script>
+</html>

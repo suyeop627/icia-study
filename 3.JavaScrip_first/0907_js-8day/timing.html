@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="3">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+  <h2>주기적인 처리</h2>  
+  <p><b id="num">0</b></p>
+  <p>
+    <button onclick = "inter(this)">시작</button>
+    <button onclick = "stop()">중지</button>
+  </p>
+  <p>
+    <button onclick = "timeout(this)">설정</button>
+    <button onclick = "clr()">제거</button>
+  </p>
+</body>
+<!--script-->
+<script>
+  const num = document.getElementById("num");
+  let n = 0;    //카운트 하는 변수
+  
+  //interval 생성
+  let myInter;
+  let startbtn;         //inter()에서 비활성화 한 버튼을 stop()에서 활성화 시키기 위해서 새로운 변수에 담아서 옮김
+
+  function inter(elm){
+    startbtn = elm;           
+    elm.disabled = true;
+    myInter = setInterval(function(){
+        n++;
+        num.innerHTML = n;
+    }, 500);
+  }
+
+    function stop(){
+      startbtn.disabled = false
+      clearInterval(myInter);
+      n = 0;
+      num.innerHTML = n;    //목적에 따라서 n=0과, num.innerHTML = n 을 주석처리해서 clearInterval사용할 수 있음.
+    }
+
+    let reset;
+  function timeout(em){   //timtout이나 interval의 버튼을 중복해서 누르면 계속 쌓여서 꼬일 수 있음
+    reset = em;
+    reset.disabled = true;
+    to = setTimeout(function(){
+      alert("3초 경과");
+      em.disabled = false;    //스택 쌓이는걸 막으려면 
+    }, 3000)
+  }
+  function clr(){
+    clearTimeout(to);
+    reset.disabled = false;
+    
+
+  }
+</script>
+</html>

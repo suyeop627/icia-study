@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="">
+
+<title>object 예제</title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+
+</body>
+<!--script-->
+<script>
+//object 생성
+//account 객체 만들기
+
+var account ={};
+
+
+
+//balance(잔액) 키값  추가, 0(숫자형)으로 초기화.
+account.balance = 0;
+
+//객체의 함수 생성
+//(1)입금 함수
+account.deposit = function (amount) {
+    this.balance += amount;            
+    //this.balance => 객체의 key가 balance인 것을 의미
+    //this.balance = this.balance + amount;
+    //현재 잔액 = 기존 잔액 + 입금액(양);
+}
+//(2)출금 함수
+account.withdrawal = function(amount){
+    //내가 가진 금액보다 출금액이 클경우, '잔액이 부족합니다'라는 메세지가 뜨고, 
+    //잔액이 더 클 경우에만 출금이 되도록 프로그램을 완성하시오
+
+    if(this.balance>=amount){
+    this.balance -= amount;
+    } else {
+        console.log("잔액이 부족합니다.")
+    }
+}
+//(3)잔액 조회 함수
+account.toString = function(){
+    console.log("현재잔액 : " + this.balance);
+}
+    //=================================================
+//object사용
+ //(1) 계좌생성시 10,000원으로 시작한다.
+account.balance=10000;
+
+//(2)10,000원 입금
+account.deposit(10000)  //현재 잔액 20,000
+
+//(3) 5,000원 출금
+account.withdrawal(5000) //현재잔액 15,000
+
+
+//(0) 잔액 조회
+account.toString()
+
+
+
+
+
+
+</script>
+</html>

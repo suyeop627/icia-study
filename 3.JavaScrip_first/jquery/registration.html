@@ -1,0 +1,219 @@
+<html>
+
+<head>
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <style>
+    form span {
+      font-size: 13px;
+      margin-left: 10px;
+    }
+
+    * {
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    td:nth-child(even) {
+      width: 500px;
+      ;
+    }
+
+    input {
+      width: 100%;
+      height: 30px;
+    }
+
+    td {
+      padding: 5px;
+      height: 50px;
+    }
+
+    #submitBtn:last-child {
+      width: 100px;
+      cursor: pointer;
+
+    }
+
+    #birth,
+    select {
+      width: 150px;
+      height: 30px
+    }
+
+    button {
+      margin-top: 3px;
+      cursor: pointer;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      margin: 50px;
+      ;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    footer>div>span {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1> 회원가입</h1>
+  </header>
+  <section>
+    <form method="get">
+      <table>
+        <tr>
+          <td>
+            아이디
+          </td>
+          <td>
+            <input id="id" type="text" name="id" required><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            비밀번호
+          </td>
+          <td>
+            <input id="pwd" type="password" name="pwd" required><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+
+            비밀번호 재확인
+          </td>
+          <td>
+            <input type="password" name="pwd" required><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            이름
+          </td>
+          <td>
+            <input type="text" name="name" required><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            생년월일
+          </td>
+          <td>
+            <input id="birth" type="date" name="birth"><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            성별
+
+          </td>
+          <td>
+            <select name="gender" required>
+              <option value="nc">성별</option>
+              <option value="M">남성</option>
+              <option value="F">여성</option>
+              <option value="none">선택안함</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>본인 확인 이메일<small>(선택)</small></td>
+          <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+          <td>
+            휴대전화
+          </td>
+          <td>
+            <input type="phone" name="phone" pattern="\d{2,3}-\d{3,4}-\d{4}" placeholder="전화번호 입력">
+            <button id="getCheckNumber" type="button">인증번호 받기</button>
+            <span id="certiMsg"></span><span id="certiNum"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id=resultNumber></p>
+          </td>
+          <td>
+            <input id="checkNumber" type="text" placeholder="인증번호 입력하세요">
+            <button id="compareCertiNum" type="button">인증번호 확인</button><span id=resultOfCheck></span>
+          </td>
+        </tr>
+      </table>
+      <input id="submitBtn" type="submit" value="가입하기" disabled>
+    </form>
+  </section>
+  <footer>
+    <div>
+      <span>이용약관</span> |
+      <span>개인정보처리방침</span> |
+      <span>책임과 한계와 법적고지</span> |
+      <span>회원정보 고객센터</span><br><br>
+      &copy;study Corp.
+    </div>
+  </footer>
+
+</body>
+<script>
+$('input').focus(function () {
+      $(this).css('background-color', '#d9d9d9')
+    });
+    $('input').blur(function () {
+      $(this).css('background-color', 'white')
+    });
+
+
+
+
+
+  //인증번호 발송
+  $('#getCheckNumber').click(() => {
+    let certiNum = "";
+    for (let i = 1; i <= 5; i++) {
+      let randomNumber = Math.floor(Math.random() * 9);
+      certiNum += randomNumber;
+    }
+    $("#certiMsg").html("인증번호 : ")
+    $('#certiNum').html(certiNum) //id가 idSel인 버튼 클릭 시, 문장 출력
+  });
+
+//인증 번호 검증
+  $('#compareCertiNum').click(() => {
+    let msg;
+    if ($('#checkNumber').val() == "") {
+      msg = "인증 번호를 입력하세요"
+      $('#submitBtn').attr('disabled', true)
+    } else if ($('#checkNumber').val() == $('#certiNum').html()) {
+      msg = "인증번호 확인이 완료되었습니다."
+      $('#submitBtn').attr('disabled', false)
+    } else {
+      msg = "인증 번호를 재발급 받으시거나, 다시 한번 확인해주세요"
+      $('#submitBtn').attr('disabled', true)
+    }
+    $('#resultOfCheck').html(msg)
+  })
+</script>
+
+
+
+
+</html>

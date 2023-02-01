@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<!--body-->
+<body> 
+    <fieldset>
+        <legend>두 수 사이의 합 구하기</legend>
+        <label>첫번째 수 : <input type="text" id="fNum"></label>
+        <label>두번째 수 : <input type="text" id="sNum"></label>
+        <input type="button" value="구하기" onclick="twoNumber()">
+        <h1 id="result"></h1>
+    </fieldset>
+</body>
+<!--script-->
+<script>
+//다 못품.
+// function twoNumber(){
+// var num1 = document.getElementById("fNum").value;
+// var num2 = document.getElementById("sNum").value;
+// var sum = num1 + num2
+
+// for(num1 ; num1<=num2 ; num1++){
+
+//   sum = sum+num1;
+  
+// }
+
+// }
+// document.getElementById("result").innerHTML = sum
+
+
+function twoNumber(){
+    var fNum = Number(document.getElementById("fNum").value);       //Number()로 fNum과 sNum을 숫자형으로 변환
+    var sNum = Number(document.getElementById("sNum").value);              //id값 sNum과 var sNum은 다른거임. 그냥 이름만 같은거
+    var result = document.getElementById("result");                 //입력하는 요소에는 value작성, 출력하는 요소에는 value 빼고 작성 - value값을 가져오지 않았으므로, id가 result인 태그 자체를 result라는 변수에 넣는다.
+    
+    var txt=null;
+    var sum = 0;
+
+
+
+
+    for(var i=fNum ; i<=sNum; i++){
+        // sum = sum+i;
+            sum += i;    //기존에 있던 sum의 값에 i값을 더한 값이 sum값이 된다. 윗줄과 동의의 식임.
+
+            txt += i;
+            if (i<sNum){
+                txt += "+"; 
+            } else {            //i==fNum이면, 
+                txt += "=";
+            }        
+    }
+        txt += sum;              //result.innerHTML = txt+sum;     
+        result.innerHTML = txt;
+}
+
+
+
+</script>
+</html>

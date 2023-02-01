@@ -1,0 +1,5 @@
+슬라이더 만들기
+    input 태그 radio type
+    ul태그
+    label 태그
+    

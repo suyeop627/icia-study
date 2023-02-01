@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="1">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+
+  <h1>문제3</h1>
+  <p>키와 몸무게를 입력받아서 비만여부를 판단하는 프로그램을 작성하시오.<br>
+    "표준 체형 판단 기준 = (키-100)*"><br>
+    -표준 이상일 경우 : 다이어트가 필요할 수 있습니다.<br> 
+    -표준 이하일 경우 : 표준(또는 마른)체형입니다.</p>
+
+<input type = "number" id = "hei"><br>
+<input type = "number" id = "we"><br>
+<button onclick = "f1()">입력</button>  
+<span id="out3"></span>
+
+<hr>
+
+<h2>번외. 요소의 innerHTML와 innerText </h2>
+<span id="s1">이런 내용</span><br>
+<span id="s2">저런 내용</span>
+
+</body>
+<!--script-->
+<script>
+const hei = document.getElementById("hei");
+const we = document.getElementById("we");
+const o3 = document.getElementById("out3");
+
+
+//함수만드는 방법 두번째. (첫번째는 fucntion f1() {})
+//let를 써도 되지만, 함수 실행중에는 어차피 값을 변경할 수 없어서 큰 상관은 없다.
+
+
+
+//변수에 이름이 없는 함수를 담는 형태로, '익명함수'라고 한다.
+//만드는 방법은 다르지만, 함수의 실행은 'f1()'로, 동일하다.
+const f1 = function (){ 
+  let h = hei.value;         
+  let w = we.value;
+  let s = (h -100 ) * 0.9;  //연산 순서 주의
+  
+  
+
+
+/*element와 element.value의 차이 - 위의 body에서, span은 종료태그가 있고, input은 종료태그가 없다. 
+어떤 값을 출력하기 위해서, span은 시작태그와 종료태그 사이에 출력하지만,
+input은 종료태그가 없어서 input의 값으로 출력한다.
+그래서 어떤 문장을 출력하려고할때, span은 element를, input은 element.value를 지정한다.*/
+
+
+
+/*const hei = document.getElementById("hei");에 .value를 붙이지 않는 이유는, 
+함수가 시작 됐을때 요소에서 값을 가져오는 흐름이므로, 함수가 실행되기 전의 값은 의미가 없어서 이다. 
+함수가 실행 된 뒤에, value에 입력된 값을 가져오도록 하기 위해서 .value를 함수의 안에 넣는다*/
+
+
+  if(w>=s){ //표준 이상이면
+    o3.innerHTML = "다이어트가 필요할 수 있습니다."
+  }
+  else {  //표준 미만이면
+    o3.innerHTML = "표준(또는 마른)체형 입니다."
+  }
+
+
+  hei.value="";   //input value 초기화
+  we.value="";
+  
+
+}
+
+///////////////////////////////////////////////////////////////////////
+
+//번와 스크립트
+const s_1 = document.getElementById("s1");
+const s_2 = document.getElementById("s2");
+ //   innerHTML이나, innerText는 둘다 기존의 값을 지우고 출력된다는 점은 같지만, 
+console.log(s_1.innerHTML);   //html요소를 그대로 가져옴 (태그 적용 가능)
+console.log(s_2.innerText);   //text만 가져옴
+                          
+
+
+
+
+</script>
+</html>

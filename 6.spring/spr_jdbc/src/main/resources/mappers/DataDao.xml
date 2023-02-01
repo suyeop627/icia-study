@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jsframework.spr_jdbc.dao.DataDao">
+
+
+    <!--id =(메서드명)-->
+    <select id="getCount" resultType="java.lang.Integer">
+-- resultType = 반환할 데이터의 타입
+        SELECT count(*) FROM datatbl
+    </select>
+
+
+
+
+
+<!--    메서드에 parameter가 있을 경우, parameterType을 추가로 작성한다.-->
+<!--    mybatis.type-aliases-package=com.jsframe.spr_jdbc.dto에서 설정했기 때문에, com.jsframe.spr_jdbc.dto.DataDto의 앞의 경로를 생략한 DataDto만 작성할 수 있다..-->
+<!--   변수에 담긴 값을 insert 할땐, #{변수명}의 형식으로 작성한다.-->
+    <insert id="insertData" parameterType="DataDto">
+        INSERT INTO datatbl VALUES (null, #{m_str}, #{m_int}, #{m_date})
+    </insert>
+
+
+
+
+
+
+    <select id="selectList" resultType="DataDto">
+        SELECT * FROM datatbl
+    </select>
+</mapper>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="">
+  <link rel="shortcut icon" href="favicon.png">
+  <title></title>
+  <style>
+
+  </style>
+</head>
+
+<!--body-->
+
+<body>
+  <button id="strike">Strike</button>
+  <button id="ball">Ball</button>
+  <button id="restart" style="display:none">
+    재시작
+  </button>
+  <br />
+  B:<b id="b">0</b><br />
+  S:<b id="s">0</b><br />
+  O:<b id="o">0</b><br />
+</body>
+<!--script-->
+<script>
+  const strike = document.getElementById("strike")
+  const ball = document.getElementById("ball")
+  const restart = document.getElementById("restart")
+
+  const b = document.getElementById("b")
+  const s = document.getElementById("s")
+  const o = document.getElementById("o")
+
+  let i = 0
+  let j = 0
+  let k = 0
+  let Ssum = 0
+  let Bsum = 0
+  let Osum = 0
+  strike.addEventListener("click", function () {
+
+    if (i <2) {
+      i++
+      Ssum = i
+      s.innerHTML = Ssum
+
+    } else {
+      if (j < 2) {
+        i++
+        Ssum = i
+        s.innerHTML = Ssum
+
+        j++
+        Osum = j
+        s.innerHTML = 0
+        b.innerHTML = 0
+        o.innerHTML = Osum
+        alert("3 스트라이크")
+
+        i = 0
+        k = 0
+      } else {
+        alert("3진아웃")
+        o.innerHTML = 3
+        s.innerHTML = 0
+
+        i = 0
+        j = 0
+        k = 0
+        Ssum = 0
+        Bsum = 0
+        Osum = 0
+        restart.style.display = "inline"
+        restart.disabled = false
+
+        strike.disabled = true
+        ball.disabled = true
+      }
+    }
+  }
+  )
+
+
+  ball.addEventListener("click", function () {
+
+    if (k < 3) {
+      k++
+      Bsum = k
+      b.innerHTML = Bsum
+
+    } else {
+      if (j <= 3) {
+        alert("4볼입니다")
+        i = 0
+        k = 0
+        Bsum = 0
+        Ssum = 0
+        b.innerHTML = Osum
+        s.innerHTML = Ssum
+
+      }
+    }
+  }
+  )
+  restart.addEventListener("click", function () {
+    restart.disabled = false
+    restart.style.display = "none"
+    
+    strike.disabled = false
+    ball.disabled = false
+    let i = 0
+    let j = 0
+    let k = 0
+    let Ssum = 0
+    let Bsum = 0
+    let Osum = 0
+    b.innerHTML = 0
+    s.innerHTML = 0
+    o.innerHTML = 0
+
+  })
+
+</script>
+
+</html>

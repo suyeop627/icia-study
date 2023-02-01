@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="6">
+  <title></title>
+  <style>
+    *{
+      margin : 0;
+      padding : 0;
+    }
+    .nav {
+      position : fixed;
+      top: 0;
+      width : 100%;
+      height : 50px;
+      display : flex;
+      justify-content: space-around;    /*margin포함해서 요소의 양 옆의 여백이 같도록*/
+      align-items: center;
+      background-color: gray;
+      color : white;
+    }
+    .nav>span {
+      cursor : pointer;
+    }
+
+    .nav>span:hover {
+      border-bottom: 2px solid;
+
+    }
+
+    .content {
+      display : flex;
+      justify-content: center;
+      align-items: center;
+    }
+    div:nth-child(2) {
+      background-color: blueviolet;
+      color : white
+    }
+    div:nth-child(3){
+      background-color: aqua;
+    }
+    div:nth-child(4){
+      background-color: pink;
+    }
+
+  </style>
+</head>
+
+<!--body-->
+
+<body>
+  <div class="nav">
+    <span>나는 누구인가</span>
+    <span>좋아하는 것은</span>
+    <span>하는 일</span>
+  </div>
+  <div class="content">나는 누구입니다.</div>
+  <div class="content">내가 좋아하는 것은 이런 것들 입니다.</div>
+  <div class="content">하는 일은 뭘까요?</div>
+</body>
+<!--script-->
+<script>
+  let dh = window.innerHeight;  //창이 열렸을때의 높이
+  const navs = document.querySelectorAll("sp")
+  const contents = document.querySelectorAll(".content")
+
+  for(let i = 0; i< contents.length; i++){
+    contents[i].style.height = `${dh}px`;
+  }
+
+  const c1top = contents[0].offsetTop;
+  const c2top = contents[1].offsetTop;
+  const c4top = contents[2].offsetTop;
+
+  navs[0].onclick = function(){
+    window.scrollTo({top:c1top, behavior:"smooth"})
+  }
+  navs[1].onclick = function(){
+    window.scrollTo({top:c2top, behavior:"smooth"})
+  }
+  navs[2].onclick = function(){
+    window.scrollTo({top:c3top, behavior:"auto"})
+  }
+
+
+
+
+</script>
+
+</html>

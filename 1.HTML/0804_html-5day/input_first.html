@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>로그인 </h1>
+    <form>
+        ID : <input type="text" name="id" value="사용자"><br>
+        <!--value="" 와 vlaue=" "는 차이가 있음
+        전자는 아무것도 없는 거고, 후자는 공백이 하나 입력된 상태-->
+         <!--value에 값을 넣으면 페이지 접속시, 처음부터 저장돼있음 
+        value에 저장된 값을 지우고 새로 값을 넣으면 새로 넣은 데이터가 제출됨-->
+
+        PWD : <input type="password" name="pwd" value="1234"><br>
+
+
+
+
+
+        
+        <input type="hidden" name="hd" value="숨긴데이터"><br>
+        
+        <input type="button" value="버튼" onclick="alert('버튼!!!')">
+        
+   <!-- html과 js는 큰따옴표와 작은따음표의 구분이 없음. 위의 alert처럼 따옴표 내부 따옴표가 또 들어가면, 따옴표 구분해서 지정할 수 있음-->
+        
+        <button onclick="alert('버튼2가 눌렸다!!')">버튼2</button>
+         <!--form태그 안에 button태그 넣으면 submit태그와 같은 효과로 나타남)
+        <button type="button" button 태그의 type을 button으로 하면 submit기능 실행안함-->
+        
+        
+        <input type="submit" value="전송"><br>
+        <!--submit은 vallue를 전송하지 않는 타입-->
+        <input type="reset" value="초기화"><br>
+        <!--reset은 삭제가 아니라 초기화하는 타입임
+        value값에 입력된 값을 지우고 새로 입력, 그 후에 초기화 누르면 처음  value값이 나타남-->
+
+
+
+        <!--value의 역할
+            전달해야 될 데이터가 담기는 속성(text나 password 등의 value 선입력시)
+             사용자에게 보여줘야할 데이터를 표시함 (버튼형 타입의 value)-->
+        
+    </form>
+</body>
+</html>

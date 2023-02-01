@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>게시글 상세페이지</title>
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script th:inline="javascript">
+        $(function () {
+            let msg = [[${msg}]];
+            if (msg != null) {
+                alert(msg);
+            }
+        });
+    </script>
+</head>
+<body>
+<th:block th:include="header.html"></th:block>
+<div id="wrapdiv">
+<div class="content">
+    <div class="view_head">
+        <div class="category" th:text="${board.bcategory}"></div>
+        <div class="content_title" th:text="${board.btitle}"></div>
+        <div class="info">
+<!--            <span th:text="${board.mbcname.mcname}"></span> · &lt;!&ndash;이 부분 처리가 안되고있음&ndash;&gt;-->
+            <span th:text="${board.mbid.mid}"></span> <!--회사 이름 · 작성자 아이디-->
+        </div>
+        <div class="info">
+            <span th:text="${board.bview}"></span> ·
+            <span th:text="${board.bcomment}"></span> ·
+            <!--            <span th:text="${}"></span> &lt;!&ndash;시간 넣을 곳&ndash;&gt;-->
+        </div>
+    </div>
+</div>
+<!--  본문  -->
+    <div class="bcontent" th:text="${board.bcontent}">
+    </div>
+    <!-- 첨부파일 출력 부분 작성자에게만 보이게-->
+    <div id="fileList">
+        <!--       th:if="${#authentication.getPrincipal().getUsername() == question.author.username}"      -->
+        <th:block th:if="${#lists.isEmpty(bfList)}">
+            첨부된 파일이 없습니다.
+        </th:block>
+        <th:block th:unless="${#lists.isEmpty(bfList)}">
+            <th:block th:each="bf:${bfList}">
+                <a th:href="@{download(bfsysname=${bf.bfsysname},bforiname=${bf.bforiname})}">
+                    <span class="file-title" th:text="${bf.bforiname}"></span>
+                </a>
+            </th:block>
+        </th:block>
+    </div>
+<!--수정 삭제 버튼 작성자에게만 보이게-->
+    <div id="udbtn">
+        <!--       th:if="${#authentication.getPrincipal().getUsername() == question.author.username}"      -->
+        <button id="upbtn">수정</button>
+        <button id="delbtn">삭제</button>
+    </div>
+<!--  댓글 작성 부분  -->
+<div class="reply">
+    <form method="post" action="cWriteProc" id="replyfrm" class="reply_form">
+        <!--      작성자 cname과 아이디 저장되어야 함... 근데 어떻게 작성해야할지 모르겠음...      -->
+        <input type="hidden" name="mcid" value="test">
+<!--        <input type="hidden" name=[[${session.member}]] value="test">-->
+        <input type="hidden" name="mcname" value="testcomp">
+        <input type="hidden" name="bcno" th:value="${board.bno}">
+        <input id="replyup" type="text" name="ccontent" placeholder="댓글을 입력해주세요">
+    </form>
+</div>
+<!--  작성된 댓글 출력 부분  -->
+<div class="comment" th:each="comment:${commentList}">
+    <div class="info">
+        <span th:text="${comment.mcname}"></span> ·
+        <span th:text="${comment.mcid.mid}"></span> ·
+        <!--            <span th:text="${}"></span>-->
+    </div>
+    <div class="ccontent" th:text="${comment.ccontent}">
+        <span><button type="submit" name="submit" value="update">수정</button></span>
+        <span><button type="submit" name="submit" value="delete">삭제</button></span>
+    </div>
+</div>
+</div>
+
+</body>
+<script th:inline="javascript">
+    /////////////////////////////////////////////////////////////
+    // $("#replyup").on("keyup", function () {
+    //
+    //     const rp = $("#replyfrm").serialize();
+    //
+    //     $.ajax({
+    //         url: "detail",
+    //         type: "post",
+    //         data: rp,
+    //         success: function (result) {
+    //
+    //         },
+    //         error: function (error) {
+    //             alert("다시 시도해주세요")
+    //             console.log(error);
+    //         }
+    //     });
+    // })
+
+    //작성자에게만 버튼 노출
+    //게시글 수정 버튼
+    $("#upbtn").click(function () {
+        location.href = "updateFrm?bno=" + [[${board.bno}]];
+    });
+    //게시글 삭제 버튼
+    $("#delbtn").click(function () {
+        location.href = "delete?bno=" + [[${board.bno}]];
+    });
+</script>
+</html>

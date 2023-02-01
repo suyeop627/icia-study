@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- head -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월별 날짜 구하기</title>
+</head>
+<!-- body -->
+<body>
+    <fieldset>
+        <legend>해당월의 날짜 구하기</legend>
+        <h3>구하려고 하는 월 (month)를 입력해주세요!</h3>
+        <input type="text" id="month">
+        <input type="button" value="입력" onclick="month1()">
+        <h1 id="result"></h1>
+        <!-- xx월은 xx일까지 있습니다. -->
+    </fieldset>
+    
+</body>
+<!-- script -->
+<script>
+    function month1 () {
+        var mon1 = document.getElementById("month").value;
+        console.log("mon1 : " + mon1);
+
+        switch(mon1){
+            case "1월" :
+            document.getElementById("result").innerHTML = "1월은 31일까지 있습니다." 
+            break;
+
+            case "2월" :
+            document.getElementById("result").innerHTML = "2월은 28일까지 있습니다." 
+            break;
+
+            case "3월" :
+            document.getElementById("result").innerHTML = "3월은 31일까지 있습니다." 
+            break;
+
+            case "4월" :
+            document.getElementById("result").innerHTML = "4월은 30일까지 있습니다." 
+            break;
+
+            case "5월" :
+            document.getElementById("result").innerHTML = "5월은 31일까지 있습니다." 
+            break;
+
+            case "6월" :
+            document.getElementById("result").innerHTML = "6월은 30일까지 있습니다." 
+            break;
+
+            case "7월" :
+            document.getElementById("result").innerHTML = "7월은 31일까지 있습니다." 
+            break;
+
+            case "8월" :
+            document.getElementById("result").innerHTML = "8월은 31일까지 있습니다." 
+            break;
+
+            case "9월" :
+            document.getElementById("result").innerHTML = "9월은 30일까지 있습니다." 
+            break;
+
+            case "10월" :
+            document.getElementById("result").innerHTML = "10월은 31일까지 있습니다." 
+            break;
+
+            case "11월" :
+            document.getElementById("result").innerHTML = "11월은 30일까지 있습니다." 
+            break;
+
+            case "12월" :
+            document.getElementById("result").innerHTML = "12월은 31일까지 있습니다." 
+            break;
+
+            default :
+            document.getElementById("result").innerHTML = "1월부터 12월중에서 선택하여 주십시오." 
+            break;
+        }
+    }
+
+</script>
+</html>

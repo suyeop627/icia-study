@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="">
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <title></title>
+</head>
+
+<body>
+  <a href="http://www.w3schools.com"> 사이트 링크 A</a><br />
+  <a href="http://www.w3schools.com"> 사이트 링크 B</a><br />
+  <a href="http://www.w3schools.com" target="_blank"> 사이트 링크 C</a><br />
+  <button id="link">링크 없애기</button>
+  <button id="link2">target='_blank'</button>
+  <button id="link3">target!='_blank'</button>
+  <button id="btn">버튼제어</button>
+  <input type="button" value="input 태그">
+
+  <table border="1">
+    <tr>
+      <th>이름</th>
+      <th>생년월일</th>
+    </tr>
+    <tr>
+      <td>김길동</td>
+      <td>2015-00-00</td>
+    </tr>
+    <tr>
+      <td>이길동</td>
+      <td>2015-00-00</td>
+    </tr>
+    <tr>
+      <td>박길동</td>
+      <td>2015-00-00</td>
+    </tr>
+    <tr>
+      <td>홍길동</td>
+      <td>2015-00-00</td>
+    </tr>
+    <tr>
+      <td>정길동</td>
+      <td>2015-00-00</td>
+    </tr>
+  </table>
+  <button id="odd">홀수선택</button>
+  <button id="even">짝수선택</button>
+
+
+
+  <script>
+    $('#link').click(function () {
+      $("a[target='_blank']").hide(); //속성 선택자는 []안에 작성 (a태그 중에서 target속성을 가지고, 그 속성값이 _blank인 요소를 선택)
+      $('script').hide();
+      turnBack();
+    })
+
+
+    $('#link3').click(function () {
+      $("a[target!='_blank']").hide();
+      $('script').hide();
+      turnBack();
+    })
+
+
+    function turnBack() {
+      setTimeout(function () {
+        $("*").show();
+      }, 3000);
+    }
+
+
+    //input type button 과 button 태그를 함께 선택하기
+    $('#btn').click(function () {
+      //  $(":button").text('텍스트 변경');    //button 태그이거나, type이 button인 요소를 선택.
+      //  $(":button").val('변경');    //button 태그이거나, type이 button인 요소를 선택.
+
+      $(':button').text('텍스트 변경').val('변경');
+      console.log($('[type=button]').val()) //parameter를 넣지 않으면, get, parameter를 넣으면 set 을 할 수 있다.
+    })
+
+
+
+    $('#odd').click(function () {
+      $('tr:odd').css('background-color', 'yellow')
+    })
+  </script>
+
+</body>
+
+</html>

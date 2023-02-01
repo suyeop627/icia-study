@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<!--body-->
+<body> 
+    <h2>continue문</h2>
+    <p id="continue1"></p>
+    <hr/>
+    <h2>break문</h2>
+    <p id="break1"></p>
+</body>
+<!--script-->
+<script>
+
+  
+                        
+
+var txt1 = ""
+var txt2 = ""
+//null값을 안주고, ""로 초기화 하면 타입을 string으로 지정 할 수 있다.
+
+
+// Q continue문을 사용해서 1~10사이 수에서 3의 배수를 건너뛴다.
+
+// for(var i=1 ; i<=10 ; i++ ){
+//     if(i %3 == 0){
+//         continue;
+//     }
+//     console.log(i)
+
+// }
+
+for(var i=1 ; i<=10 ; i++ ){     
+        if(i%3==0) {
+            continue;
+        }
+        txt1 += "Continue Number is " +i+ "<br/>"
+}
+document.getElementById("continue1").innerHTML = txt1;
+
+
+//Q break문을 사용해서 1~10사이 수를 출력하는데 6일때 멈추도록 한다.
+
+
+for(var i=1 ; i<=10 ; i++ ){
+
+        if(i >= 6) {
+            break;
+        }
+        txt2 += "Break Number is " +i+ "<br/>"
+}
+document.getElementById("break1").innerHTML = txt2;
+
+</script>
+</html>

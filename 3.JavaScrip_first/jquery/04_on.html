@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <title></title>
+</head>
+
+<body>
+  <ul>
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+    <li>ddd</li>
+  </ul>
+  <div style="border:1px solid blue;width:100px;height:100px"> </div>
+  <button id="btn">on</button>
+  <p>동해물과 백두산이 마르고 닳도록.......</p>
+  <script>
+    //ul li 후손 모두 선택 / ul>li 바로 아래 자식요소만 선택
+    //넓은 선택자       //좁은선택자
+    $('ul').on('click', 'li', function () { //넓은 선택자 ul태그에 click이벤트를 설정하는 데, li가 클릭됐을 때 function을 실행하도록.
+      $('div').append('<button>click</button>');
+      $(this).css('color', 'red');
+    });
+
+
+    //on 메서드를 사용해야 하는 경우. (컴파일 시점의 차이가 발생할 때.)
+    //첫 컴파일 시에 div아래의 버튼은 생성되지 않았기 때문에, on메서드를 사용하지 않으면 적용되지 않는다. on 매서드를 사용해서 넓은 선택자 div의 좁은 선택자 li에 click이벤트를  바인딩 해놓는 방식으로 사용할 수 있다.
+    $('div').on('click', 'button', (function () {
+      alert('button clicked');
+    }));
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="3">
+
+  <title></title>
+  <style>
+
+  </style>
+</head>
+
+<!--body-->
+
+<body>
+  <p id="res1"></p>
+  <p id="res2"></p>
+
+  <hr>
+  <h2>윤년 계산기</h2>
+  <p>연도를 입력하세요.</p>
+  <input type="number" id="inYear">
+  <button onclick="leap()">확인</button>
+  <p><span id="outRes">결과 :</span></p>
+
+</body>
+<!--script-->
+<script>
+  let a = 100;
+  let b = "100";
+
+
+  const r1 = document.getElementById("res1")
+  const r2 = document.getElementById("res2")
+  r1.innerHTML = `a === b 는 ${(a === b)}`;
+  r2.innerHTML = `a !== b 는 ${(a == b)}`;    //하나라도 다르면 참 (타입이 달라서 참으로 출력 // "50"과 "100"을 비교해도, 타입은 같지만 데이터가 달라서 참임.//데이터와 타입이 같아야 거짓.)
+
+  //if(!(score>=90)) - 90점 미만이면 참이 되는 조건식 <-부정에 해당하는 조건식을 사용할 수도 있음
+  //while문 사용할 때, 더이상 읽어올 게 있으면 true로 하거나, 읽어올게 없을때 true로 표현할 수도 있음
+
+
+  // ==은 데이터만 비교, ===는 자료형까지 비교
+  //논리곱 && : 0과1의 곱으로 생각해서, 1이 되면 참
+  // 논리합 || : 0과 1의 합으로 생각해서 0이 아니면 참
+
+  //+) ==나 &&같은 연산자를 두개씩 쓰는 이유? ->하나짜리는 이미 사용중. = : 대입연산, & : 비트 연산
+
+
+
+
+
+  //윤년 계산(조건 연산자 활용)
+  // 2월이 29일이 되는 년도.
+  // 4년마다 한번씩 윤년이다.
+  // 100년마다 한번씩은 윤년이 아니다.
+  // 400년마다 한번씩은 윤년이다.
+  //let year = 100;
+  // let f = (year % 4) == 0;//윤년
+  // console.log(f);
+  // let h = !((year % 100) == 0);//윤년 아님
+  // console.log(f);
+  // let fh = (year % 400) == 0;//윤년
+
+  // let t1 = ((year % 4) == 0) &&
+  //          ((year % 100) != 0);
+  //let t2 = (((year % 4) == 0) && ((year % 100) != 0)) 
+  //      || ((year % 400) == 0);
+
+  //console.log(t2);
+
+
+
+
+
+
+
+  //윤년 계산기 스크립트 
+  const iy = document.getElementById("inYear");
+  const or = document.getElementById("outRes")
+
+  const leap = function () {
+    let year = iy.value;
+    let t2 = (((year % 4) == 0) && ((year % 100) != 0))
+      || ((year % 400) == 0);
+
+    let str = (t2) ? "윤년입니다" : "윤년이 아닙니다. ";
+    or.innerHTML = `결과 : ${str}`;
+    iy.value = ""
+  }
+
+
+
+//변수 하나라도 식이라고 한다(표현식). ->t2도 조건식  - 괄호는 굳이 안적어도 되는데 보기 좋음 t2 ? a : b 도 가능
+
+</script>
+
+</html>

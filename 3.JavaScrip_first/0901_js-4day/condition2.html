@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="2">
+  <title>학점 변환기</title>
+  <style>
+
+  </style>
+</head>
+
+<!--body-->
+
+<body>
+  <h2>학점 변환기</h2>
+  <p>점수 : <input type="number" id="score">
+    <button onclick="toGrade()">입력</button>
+  </p>
+  <p>학점 : <span id="grade"></span></p>
+
+
+</body>
+<script>
+  const score = document.getElementById("score");
+  const grade = document.getElementById("grade");
+
+  //if는 조건식을 사용할 수 있지만, switch는 조건식을 사용할 수 없음. 
+  function toGrade(){
+    let s = score.value;
+    if (s == "") { 
+      alert("점수를 입력하세요.");
+      score.value = "";
+      return; 
+    } 
+
+    if (s > 100 || s < 0) {
+      alert("0~100점까지의 점수를 입력하세요.");
+      score.value = "";
+      return;
+    }
+
+
+    let g ="";
+    
+    s= parseInt(s/10) //parseInt(실수)->실수를 정수로 변환 / 소수점 이하의 값은 버린다.
+    //90점대의 점수를 10으로 나누면 9.x 인데, 정수로 변환하면 9로 통일시킬 수 있다.
+    //정수 : integer 실수 : Float
+
+
+
+    switch(s){
+      //case 100:cace99: case98 : 같은식으로 작성하면, break이 걸리지 않아서 쭉 내려감. 마지막에 원할때 break걸어서 멈출 수 있음.
+
+      case 10 : 
+      case 9 : 
+        g="A학점";
+        break; 
+      case 8 : 
+        g="B학점";
+        break; 
+      case 7 : 
+        g="C학점";
+        break; 
+      case 6 : 
+        g="D학점";
+        break; 
+
+      default:
+        g = "F학점";
+        break; //default에는 안써도 됨
+    }
+    score.value = "";
+    grade.innerHTML = g   
+
+  }
+//100~109점 처리하는거 추가해야함
+
+</script>
+
+</html>

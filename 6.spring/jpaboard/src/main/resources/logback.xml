@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!--	출력할 로그의 형식 지정-->
+			<Pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+		</encoder>
+	</appender>
+	<!--	패키지 명-->
+	<logger name="com.jsframe.jpaboard" level="info" />
+	<!-- 테이블에 결과를 출력하기 위해서 info 대신 trace설정 -->
+	<logger name="jdbc.resultsettable" level="debug" />
+	<!--	실행한 sql 출력-->
+	<logger name="jdbc.sqlonly" level="debug" />
+	<!--	ResultSet을 포함한 jdbc호출정보 출력-->
+	<logger name="jdbc.resultset" level="debug" />
+
+	<!--	ResultSet을 제외한 jdbc 호출정보 출력-->
+	<logger name="jdbc.audit" level="off" />
+	<!--	sql과 수행된 시간을 로그로 출력-->
+	<logger name="jdbc.sqltiming" level="off" />
+	<logger name="jdbc.connection" level="off" />
+	<root level="off">
+		<appender-ref ref="console" />
+	</root>
+</configuration>

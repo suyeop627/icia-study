@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>variable(변수)</title>
+
+
+
+
+
+
+
+
+
+
+</head>
+<!--body-->
+<body>
+    
+    
+</body>
+<!--script-->
+<script>
+    //변수(Variable) var : 변하는 수(데이터를 저장하는 영역)  //변수 age에 20이라는 숫자를 담음
+    var age = 20;
+    //[데이터타입] [변수이름] = [변수값]; <- 변수 정하는 형식
+ 
+    var number1 = 10;  //number
+    var number2 = '10'; //string
+    var number3 = true ; //boolean
+
+    /*데이터타입
+    1)number : 숫자형 (위에서 숫자 10(십))
+    2)string : 문자형 (위에선 숫자 10(일, 영))
+    3)boolean : 논리형 (참(true) / 거짓(false) 판별)*/
+
+    //변수값과 변수의 타입을 확인
+    console.log("number1 : "+ number1);
+    console.log("number1의 타입"+ typeof(number1));
+
+    console.log("number2 :" + number2);
+    console.log("number2의 타입" + typeof(number2))
+
+    console.log("number 3 :" + number3);
+    console.log("number 3의 타입" + typeof(number3))
+    
+    var number4 = number1 > 11;
+    var number5 = number1 < 11;
+
+    console.log("number 4 :" + number4);
+    console.log("number 4의 타입" + typeof(number4))
+
+    console.log("number 5 :" + number5);
+    console.log("number 5의 타입" + typeof(number5))
+
+    //**script에서 선언한 변수를 body(html)에 출력해보기
+      //script에서 출력할 때 : console.log( );
+       //script에서 선언한 내용을 body에서 출력할 때(여러가지)
+       //document.write( );
+       document.write("script의 내용을 body에 출력합니다.");
+       document.write("<br/><h1>number1 :" + number1 +"</h1>");
+       //공백? 화이트스페이스? <- 찾아보고 정리
+       
+       /*document.write("script의 내용을 body에 출력합니다.");
+       document.write("number1 :" + number1);
+       이렇게만 적으면 줄바꿈안됨. 여기서 html태그 사용 가능
+        document.write("script의 내용을 body에 출력합니다.");
+       document.write("<br/><h1>number1 :" + number1 +"</h1>");
+       */
+
+
+       //변수이름 정하기!
+       //[1] 카멜(낙타) 표기법 사용
+       //   : 시작은 소문자, 다른 의미의 단어가 나올경우 대문자로 시작
+        //  : ex)학생번호=학생(stu) + 번호(num) => stuNum
+        var stunum =1;
+
+        //[2] 영문자, 숫자, 특수문자(언더스코어(_), 달러($)만 사용)
+        var nam_e = "in";
+        var n$me = "cho";
+        // var n#name ="ri";
+        // var n!ame = "ya"; _나 $외의 특수문자는 사용 불가
+        //[3]변수 이름은 숫자로 시작할 수 없다.
+        var a12 = 123
+        // var 1ab= 123;
+
+        //[4] 변수이름은 예약어(var, document, console) 
+        // 예약어(豫約語, 영어: reserved word)는 컴퓨터 프로그래밍 언어에서 
+        // 이미 문법적인 용도로 사용되고 있기 때문에 식별자로 
+        // 사용할 수 없는 단어들이다.
+        
+        // var document =10
+        // console.log("document : " + document);<- 변수로 지정한 document의 값이 출력되지않음
+        // var var = 10
+        
+        console.log("document : " + document);
+</script>
+</html>

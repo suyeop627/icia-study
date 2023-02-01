@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="3">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+  <button>추가</button>
+  <button>합산</button>
+  <div id="space"></div>
+</body>
+<!--script-->
+<script>
+ //태그의 이름으로 요소를 가져온다.
+ //같은 태그 요소를 모두 가져와서 배열로 저장한다.
+const btns = document.getElementsByTagName("button");     
+console.log(btns);
+
+const sp = document.getElementById("space");
+
+//addEventListener : 자바스크립트로 요소의 이벤트를 처리
+//첫번재 버튼 : btns[0]
+btns[0].addEventListener("click", function(){   //콜백함수
+  //alert("추가 버튼을 눌렀습니다.")
+
+
+  //자바스크립트로 html요소 추가 단계
+  //1. 요소 생성(createElement)
+  //2. 부모요소에 생성한 요소를 자식요소로 추가(appendChild)
+  //3. 요소에 글자내용을 넣을 경우, TextNode를 생성해서 추가. (createTextNod)
+  let ptag = document.createElement("p");        //input요소는 인라인 요소라서, 그냥 생성하면 보기 안좋으므로, 블록요소인 p태그 안에 넣어서 생성
+  let tn = document.createTextNode("값 입력 : ");  //시작태그와 종료태그 사이에 택스트 넣던 곳을 텍스트 노드라고 하는데, 버튼은 그걸 먼저 만들어 줘야함..? 찾아보기
+  let itag = document.createElement("input");
+  
+  itag.type = "number";                //js는 id와 class를 구분해서 가져오므로, 태그 여러개를 모아서 가져올땐 태그나 클래스  활용하서 모아와야 한다.
+  itag.className = "nin";               //type number, classname nin를 요소에 부여
+  itag.value = "100";  
+  
+  ptag.appendChild(tn);        //p태그아래 input태그 넣는 식으로 생성
+  ptag.appendChild(itag);        //p태그아래 input태그 넣는 식으로 생성
+  sp.appendChild(ptag);         //스크립트로 추가한 요소는 소스보기에서 안보이고, 개발자도구에서만 확인 가능.
+});
+
+
+
+btns[1].addEventListener("click", function(){
+  //합산 버튼 처리
+  const inputs = document.querySelectorAll(".nin"); //css의 선택자와 같은 형식으로 argument작성 
+  console.log(inputs);
+  
+  let sum = 0;  //합산 값 저장
+  for(let v  of inputs){
+    sum +=Number(v.value)
+  }
+  console.log(sum);
+})
+
+</script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="2">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+  <button>시작</button>
+</body>
+<!--script-->
+<script>
+  const btn = document.querySelector("button");
+  btn.addEventListener("click", function(){     //eventlistner안에 함수를 불러오지 않고 직접 작성할 수 있는데, 해당 버튼만의 전용 함수로 사용.
+    
+    let m = 0;
+    let sum = 0;
+        let i = 0;
+
+    while(true){
+     
+      //무한루프  (반복문 = 루프. , 조건식이 참일 경우 항상 반복문을 실행하는 것.)
+      //프로그램이 중간에 지혼자 종료되면 안됨. 사용자가 언제든 종료할 수 있어야 한다.)
+
+      m=prompt("3이 아닌 값을 입력하세요.");
+      if(m == 3){
+        //break;
+        continue;         //sum이 50을 넘어도, 3을 계속 입력하면 continue때문에 넘어가서 반복이 진행됨.
+      }
+            if(sum >= 50){
+        break;
+      }
+      sum += Number(m);
+            console.log(m);
+      i++;
+    
+      
+    }
+        document.write(`입력한 값의 총합은 ${sum}입니다.<br>`);
+        document.write(`실행 횟수는 ${i}번`);
+  });
+
+
+
+let ss = 0;
+for(let j = 0; j <100; j++){
+  if (j %4 ==0){
+    continue;
+  }
+  ss += j ;
+
+}
+
+console.log(ss);
+
+
+
+
+
+
+  // //while과 break 조합
+  // let sum = 0;
+  // let v = 0;
+  // while(sum<=1000){ 
+  //   v++; 
+  //   if(v > 30){     //출력되는 v는 31. v=31이 됐을 때, break되므로 v의 값은 31까지 저장됨.
+  //     break;
+  //   }
+  //   sum += v;
+  // }
+  // console.log(sum);
+  // console.log(v);
+
+</script>
+</html>

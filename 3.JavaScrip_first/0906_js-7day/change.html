@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="5">
+<title></title>
+</head>
+<!--body-->
+<body>
+<img src="../../../../angelPizza/menu/AP_menu_image/american.jpg">
+</body>
+<!--script-->
+<script>
+const img = document.getElementsByTagName("img")
+
+console.log(img); //테그네임으로 불러오면 배열로 저장됨.
+
+img[0].width = 400;
+img[0].setAttribute("height", "500")
+</script>
+</html>

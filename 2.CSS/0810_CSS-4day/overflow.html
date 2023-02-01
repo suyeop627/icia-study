@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Overflow</title>
+    <style>       
+        div {
+            width: 200px;
+            height: 80px;
+            border: 1px dotted black;
+            background-color: #eee;
+            float: left;
+        }
+        .d1 {
+            overflow:visible;
+        }
+        .d2 { 
+            overflow:hidden;
+        }
+        .d3 {
+            overflow: scroll;    /* overflow발생 여부에 상관없이  가로, 세로 스크롤 바를항상붙임*/
+        }
+        .d4 {
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1">Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit. 
+        In ullamcorper augue vel augue rutrum faucibus.
+    </div>
+    <div class="d2">Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit. 
+        In ullamcorper augue vel augue rutrum faucibus.
+    </div>
+    <div class="d3">Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit. 
+        In ullamcorper augue vel augue rutrum faucibus. 
+    </div>
+    <div class="d4">Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit. 
+        In ullamcorper augue vel augue rutrum faucibus.
+    </div>
+</body>
+</html>

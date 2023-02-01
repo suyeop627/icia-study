@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+/* 전체 페이지에 적용할 스타일 설정 - 여백제거 */
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+/* 리스트 항목의 스타일 변경 */
+.image_slider>ul {
+    list-style: none;
+}
+/* 슬라이더가 들어갈 공간 (div)에 대한 설전 */
+.image_slider {
+    position : relative; /*부모요소에 relative, 자식요소에 absolute 설정으로 서로 상관관계를 만들 수 있음*/
+    overflow : hidden;
+    width : 600px;
+    height: 300px;
+    border : 1px solid;
+}
+
+
+
+/*슬라이더 화면의 너비와 높이 설정
+슬라이드 될 화면의 개수 * 100%로 계산하여 너비를 설정
+화면 4개 ->400%, 화면 5개->500%
+ㅁlㅁㅁㅁ <- 화면이 앞에 하나만 보여주고 나머지 3에 해당하는 부분은 오버플로우로 가려지게함
+*/
+
+.image_slider>ul {
+    width : 400%;
+    height : 100%;  /*세로 슬라이드 할거면 width 100%, height 400$로*/
+}
+
+/*각 항목(li)을 세로에서 가로로 변경하고, 한 화면만 보이도록 너비를 설정
+화면 4개 ->25%, 화면 5개 ->20%*/
+
+.image_slider>ul>li {
+    float : left;
+    width: 25%;
+    height : 100%;
+}
+/*라디오 버튼 숨기기 - 라디오 버튼의 모양을 바꾸기가 어렵기 때문에 label로 모양을 잡고, 라디오 버튼은 숨긴다*/
+
+.image_slider input {
+    display:none;
+}
+
+/*label의 위치 조정. 영역의 중앙 하단으로 설정*/
+.image_slider p {
+    text-align : center;
+    position : absolute;
+    bottom: 10px;
+    left : 0;
+    width: 100%;
+}
+/* 각 슬라이더 화면 설정*/
+.image_slider li:nth-child(1){
+    background-color: aqua;    
+}
+.image_slider li:nth-child(2){
+    background-color: pink;
+}
+.image_slider li:nth-child(3){
+    background-color: cadetblue;
+}
+.image_slider li:nth-child(4){
+    background-color: cadetblue;
+}
+
+
+
+/*label 모양 설정 */
+.image_slider label{
+    display: inline-block;
+    vertical-align: middle;
+
+    width : 10px;
+    height : 10px;
+    border : 2px solid #eee;
+    background-color: white;
+    border-radius: 50%;
+    transition : 0.3s;
+    cursor : pointer /*마우스의 모양변경*/
+}
+/*label 선택 시 화면 이동 처리
+label 클릭 -> radio 선택(checked)*/
+#pos1:checked~ul {
+    margin-left: 0%;
+    transition: margin-left 1s;
+
+}
+#pos2:checked~ul {
+    margin-left: -100%;
+    transition: margin-left 1s;
+}
+#pos3:checked~ul {
+    margin-left: -200%;
+    transition: margin-left 1s;
+}
+#pos4:checked~ul {
+    margin-left: -300%;
+    transition: margin-left 1s;
+}
+
+/*화면에 따른 label 모양 변화*/
+#pos1:checked~.pos>label:nth-child(1){
+    background-color: #999;
+}
+#pos2:checked~.pos>label:nth-child(2){
+    background-color: #999;
+}
+#pos3:checked~.pos>label:nth-child(3){
+    background-color: #999;
+}
+#pos4:checked~.pos>label:nth-child(4){
+    background-color: #999;
+}
+
+
+/* 위 방식으로 슬라이더 제작이 가능하긴 하지만, 
+완성도 생각하면 bxSlider, bootstrap 등을 활용하는 것이 좋다.
+https://bxslider.com/*/

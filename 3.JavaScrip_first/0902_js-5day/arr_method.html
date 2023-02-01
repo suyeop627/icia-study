@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="1">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+
+</body>
+<!--script-->
+<script>
+  //splice
+  let arr1 = [1,2,3,4,5,6,7,8,9]
+  console.log(arr1)
+  arr1.splice(3,2, 11, 12, 13);
+  // arr1.splice(3,0, 11, 12, 13); n에 0을 넣으면 삭제 안하고, 원하는 위치에 추가만 할 수 있음
+  console.log(arr1)
+
+  //concat
+  let arr2=["a", "b", "c"];
+  let arr3=["100", "200", "300"];
+  console.log(arr2);
+  let arr4 = arr2.concat(arr3);       //concat으로 합친 배열을 어디에 저장할 지 지정해야한다.
+  console.log(arr4);
+
+  //indexOf
+  let foods=["김밥", "갈비탕", "육계장",
+            "칼국수", "갈비탕", "돈까스"]   //컴마 뒤에선 줄바꿔도 상관없음
+  console.log(foods.indexOf("갈비탕"));
+  console.log(foods.lastIndexOf("갈비탕"));
+
+
+//모두 같은 값은 값을 찾을 경우의 루틴
+//같은 원소가 여러개일때, index찾는 식. 찾는 위치를 1씩 더해가면서 하나씩 찾아냄
+let v = 0;
+while(true){
+  v = foods.indexOf("갈비탕", v);
+  if(v==-1){        //순번을 0부터 시작해서, 순번에 해당하지 않는 값인 -1을 검색하기도 함.(대충 못찾았다는 의미로 사용하는 숫자.)
+    break;      //while을때, break을 while의 안에 넣으면 while문 종료됨. 반복문 쓸땐, if문과 조합해서 if문안에 break을 넣어야 while이 바로 종료되지 않는다.
+  }
+  else {
+    console.log(v);
+    v++;
+  }
+}
+
+  //include
+  console.log(foods.includes("칼국수"));
+  console.log(foods.includes("참치회"));
+
+
+//sort & reverse
+let arr5 = [6, 3, 4, 1, 5, 8, 0]  //유저에게 입력받을 경우, 정렬되지 않게 배열이 구성되는 경우가 많다.
+console.log(arr5.sort())
+console.log(arr5)         //원본을 변경시킨다는 점 유의할 것.
+
+let foods2=["김밥", "갈비탕", "육계장",
+            "칼국수", "갈비탕", "돈까스"]
+  console.log(foods2.sort());
+ console.log(foods2.reverse())
+ console.log(foods2)
+
+
+
+//join
+console.log(foods2.join(""))   //구분자에 빈문자열이나 공백도 넣을 수 있음
+console.log(foods2)
+
+let str = foods2.join(" ")   //join은 따로 문자열에 저장하고, 그 변수를 활용하는식으로 join을 사용함.
+
+//split
+let foods3 = str.split(" "); //구분자를 넣지 않으면, 원소가 하나인 배열을 만듦 공백을 넣으면 글자단위로, 빈문자열을 넣으면 글자단위로 만듦(이때, 공백도 원소로 만듦)
+console.log(foods3)
+
+
+//slice
+let arr6 = [1,2,3,4,5,6,7,8,9]
+let n_a6 = arr6.slice(3, 5);
+console.log(n_a6)
+console.log(arr6)
+
+//내림차순 정렬(sort)
+let arr7 = [6, 3, 4, 1, 5, 8, 0];
+
+let res_arr = arr7.sort(function(a,b){
+  return b-a;
+})
+
+</script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ICIA Cafe</title>
+</head>
+<body>
+    <top>
+    <fieldset>
+        <legend>ICIA Cafe에 오신 것을 환영합니다.</legend>
+        <h3>주문을 도와드리겠습니다.</h3>
+        
+
+        <table>
+            <tr>
+                <td></td> <img src="coffee_img/ame.jpg" width="200" onclick="menu('아메리카노')">
+                <td></td> <img src="coffee_img/latte.jpg" width="200" onclick="menu('카페라떼')">
+                <td></td> <img src="coffee_img/jamong.jpg" width="200" onclick="menu('자몽허니블랙티')">
+                <td></td> <img src="coffee_img/caramel.jpg" width="200" onclick="menu('카라멜 마끼야또')">
+            </tr>
+            <tr>
+                <td><input type="button" value="아메리카노" style="width: 200px" onclick="menu('아메리카노')"></td>
+                <td><input type="button" value="카페라떼" style="width: 200px" onclick="menu('카페라떼')"></td>
+                <td><input type="button" value="자몽허니블랙티" style="width: 200px" onclick="menu('자몽허니블랙티')"></td>
+                <td><input type="button" value="카라멜 마끼야또" style="width: 200px" onclick="menu('카라멜 마끼야또')"></td>
+            
+
+            </tr>
+        </table>
+    </fieldset>
+</top>
+<middle>
+
+
+</middle>
+<bottom>
+
+
+</bottom>
+</body>
+<script>
+    function menu(myChoice){
+        var price;
+
+        switch(myChoice){
+            case "아메리카노" : 
+                price = 2000;
+                break;
+            case "카페라떼" : 
+                price = 2500;
+                break;
+            case "자몽허니블랙티" : 
+                price =3000;
+                break;
+            case "카라멜 마끼야또" : 
+                price = 3500;
+                break;
+            default : 
+                price = 0;
+                break;
+            }
+            alert('주문하신 메뉴는 ' + myChoice + ", 가격은" + price + "원 입니다.");
+
+    }
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>배경 처리</title>
+    <style>
+        body {
+            background-image: url("circle.png");
+            /*background-color: aqua;
+            background-repeat: repeat-x;*/
+            /* background-size: 800px;*/
+            height: 1500px;
+            background-attachment: scroll;
+        }
+        div#d1 {
+            margin:20px;
+            height: 500px;
+            background-image: url(../second-html/자기소개_김수엽/cs.jpg) ;
+            background-repeat: no-repeat;
+            color: black;
+            background-size: 300px; 
+            border : 1px solid ;
+            background-position: center;
+        } 
+        #d2 { 
+            width: 500px;
+            height : 400px;
+            border: 1px solid red;
+            background: url("circle.png") 
+                        no-repeat 
+                        right;
+            background-size: 200px;  /*size는 단축 속성으로 적용 불가능, 따로 작성해야함*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">여기에 이미지가 출력됩니다.</div>
+    <div id="d2">두번째 공간</div>
+</body>
+
+</html>

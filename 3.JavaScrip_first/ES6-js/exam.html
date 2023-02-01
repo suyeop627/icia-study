@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  let str1 = ', ';
+  let str2 = 'Wolrd!'
+  let str3 = `Hellow${str1}${str2}`
+  console.log(str3);
+
+  /////////////////////////////////////////////
+  //구조 분해 할당
+
+  const arr = [1, 2, 3];
+  console.log(arr[0]);
+  //개별적인 사용?
+  let a = arr[0];
+  let b = arr[1];
+  let c = arr[2];
+  let [one, two, three] = arr;
+
+  console.log(one, two, three)
+  console.log(arr)
+  console.log(one);
+
+
+
+  //객체 분해
+  const employee = {
+    company: "ICIA",
+    name: "Hong",
+    age: 23
+  }
+
+  let {
+    company: comp,
+    name,
+    age
+  } = employee;
+
+  // console.log(comp);
+
+  ////////////////////////////
+  let arr1 = [1, 2, 3, 4];
+  let arr2 = arr1;
+  arr2[2] = 5;
+  console.log(`arr1 = ${arr1}`);
+  console.log(`arr2 = ${arr2}`)
+  
+  //-> shallow copy. 복사한 배열(arr2)를 변경할 경우, 기존 배열(arr1)의 값도 변경된다.
+//////////////////////
+  let arr3 = [];
+  for (let i = 0; i < arr1.length; i++) {
+    arr3.push(arr1[i]); //deep copy
+  }
+
+
+  arr3[2] = 15;
+  console.log(`arr1 = ${arr1}`)
+  console.log(`arr3 = ${arr3}`)
+
+
+  ///////////////////
+  arr4 = [...arr1];
+  arr4[3] = 100;
+  console.log(`arr1 = ${arr1}`);
+  console.log(`arr4 = ${arr4}`);
+
+  arr5 = [...arr1, 5, 6];
+  console.log(`arr5 = ${arr5}`);
+
+
+
+  employee2 = {
+    ...employee
+  }; //객체 복사하기
+  employee2.company = '중앙';
+  console.log(employee)
+  console.log(employee2)
+
+
+
+
+
+//가변 파라미터 처리
+function sumNumber(...args){
+  let sum = 0;
+  for (let v of args) {
+    sum += v;
+  }
+  return sum;
+}
+console.log("sumNumeber =" +  sumNumber(1, 2));
+
+
+
+
+
+
+
+
+
+
+
+  // //////////////////////
+  function add1(a, b) {
+    return a + b;
+  }
+
+  let res1 = add1(1);
+  console.log(res1); //NaN 나옴
+
+  //////////////////////
+  function add2(a = 0, b = 1) { //기본값 설정
+    return a + b;
+  }
+
+  let res2 = add2(1, 2);
+  console.log(`res2 = ${res2}`);
+  
+
+  let res3 = add2();
+  console.log(`res3 = ${res3}`);
+
+
+  //////////////////////////////////////
+
+
+  console.log(add3(3, 4)) //hoisting 가능. 선언한 위치보다 먼저 호출 가능.
+
+  function add3(a, b) {
+    return a + b;
+  }
+
+  //===> 
+  console.log(add4(5, 8)); //선언한 위치보다 먼저 사용 불가능.
+  const add4 = function (a, body) {
+    return a + b;
+  }
+
+
+  ///////////////화살표 함수
+  const add5 = function (a, b) {
+    return a + b;
+  }
+
+  const add5_1 = (a, b) => {
+    return a + b;
+  }
+
+  const add5_2 = (a, b) => a + b;
+
+  ///////////////////////////////////////
+  const nowdate = function(){
+    d = new Date();
+    return d;
+  } 
+
+  const nowdate_1 = function(){
+    return new Date();
+  }
+
+  const nowdate_2 = () =>new Date();
+  //////////////////////
+  
+  
+  const objReturn = function(x){
+    objx = {
+      xfact : x,
+      yfact : 10
+    };
+    return objx;
+  }
+
+
+  const objReturn_1 = function(x){
+    return {xfact : x, yfact : 10};
+  }
+
+
+
+  const objReturn_2 = (x)=>({xfact : x, yfact : 10});   //객체를 화살표함수로 리턴할 땐, 함수의 중괄호인지 객체의 중괄호인지 애매할 수 있어서, 소괄호로 한번 더 감싼다.
+
+
+</script>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="2022.08.19-3">
+<title>addEventListener</title>
+<style>
+div {
+    width : 250px;
+    height : 250px;
+    line-height: 250px;
+    background-color: black;
+    text-align: center;
+}
+</style>
+</head>
+
+<!--body-->
+<body>
+    <!-- (1)클릭했을 때 발생
+    (2)더블클릭했을때 이벤트
+    (3)마우스가 영역안으로 들어왔을때
+    (4)마우스가 영역 밖으로 나갔을때 -->
+
+    <div id="box" ></div>
+   
+
+
+</body>
+<!--script-->
+<script>
+
+var box1 = document.getElementById("box")
+    box1.addEventListener("mouseout", msover)
+    box1.addEventListener("mouseenter", msenter)
+    box1.addEventListener("click", click)
+    box1.addEventListener("dblclick", dblclick)
+
+
+
+function msover(){
+        box1.innerHTML = "MOUSE OUT";
+        box1.style.backgroundColor="lightseagreen";} 
+function msenter(){
+        box1.innerHTML = "MOUSE ENTER ";
+        box1.style.backgroundColor="red";}
+function click(){
+        box1.innerHTML = "CLICK";
+        box1.style.backgroundColor="blue";}
+function dblclick(){
+        box1.innerHTML = "DOUBLE CLICK";
+        box1.style.backgroundColor="yellow";}
+
+
+
+
+
+
+
+</script>
+</html>

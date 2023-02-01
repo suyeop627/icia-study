@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="2022.08.19-6">
+<title>window(브라우저 창)</title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+<!-- 요즘에 쓰는 기술은 아니므로 알아만 두기-->
+<button id="openWindow">창 열기</buttoen>
+<button id="closeWindow">창 닫기</buttoen>
+<button id="reSizeWindow">창 크기 변경</buttoen>
+
+
+</body>
+<!--script-->
+<script>
+//각 버튼 요소를 변수에 담아라. 
+
+var owin = document.getElementById("openWindow")
+var cwin = document.getElementById("closeWindow")
+var rwin = document.getElementById("reSizeWindow")
+
+//myWindow 변수 생성
+var mwin ;
+
+
+/*owin.addEventListener("click", openWin);
+function openWin(){
+
+}*/
+
+
+//addEventListener에서 함수이름이 아닌 함수를 바로 작성할 수도 있다.
+//addEventListener("event", function(){})
+
+owin.addEventListener("click", function(){
+
+    mwin = window.open("","", "width=200, height=100, resizable=yes")
+    //window.open("url", "title(팝업창의 이름)", "option(팝업창 설정)");
+    }
+);
+
+    cwin.addEventListener("click", function(){
+        
+        mwin.close();
+    })
+
+    rwin.addEventListener("click", function(){
+        // mwin.resizeTo(500, 500); //크기를 500x500으로 고정
+        mwin.resizeBy(100,100);     //크기를 지정한 만큼 커짐
+        mwin.focus();              //resize버튼을 클릭할때마다 mwin창으로 포커스 이동
+
+    })                                 
+</script>
+</html>

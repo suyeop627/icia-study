@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="3">
+<title></title>
+<style>
+</style>
+</head>
+<!--body-->
+  <body>
+    <button id="strike">Strike</button>
+    <button id="ball">Ball</button>
+    <button id="restart" style="display:none">
+      재시작
+    </button>
+    <br />
+    B:<b id="b">0</b><br />
+    S:<b id="s">0</b><br />
+    O:<b id="o">0</b><br />
+  </body>
+<!--script-->
+<script>
+//정리할 수 있는 변수들 먼저 처리하고 시작하는 게 편함
+
+//버튼
+const btnst = document.getElementById("strike")
+const btnba = document.getElementById("ball")
+const btnre = document.getElementById("restart")
+
+//전광판
+const ball = document.getElementById("b")
+const strike = document.getElementById("s")
+const out = document.getElementById("o")
+
+//각 수치 카운트 변수
+let ba = 0, st = 0, ou = 0
+
+//버튼 이벤트 처리
+btnst.addEventListener("click", function(){
+  st++;
+  strike.innerHTML=st;
+  if(st>=3){
+    alert("strike out!!");
+    ou++;
+    out.innerHTML = ou;
+init()
+  }
+
+  if(ou >= 3){
+    alert("3 Out, Game Over!")
+    btnre.style.display="inline";
+    btnst.disabled="true"
+    btnba.disabled="true"
+  }
+});
+
+//볼버튼
+btnba.addEventListener("click", function(){
+  ba++;
+  ball.innerHTML = ba;
+  if(ba >= 4){
+    alert("4 Ball!!");
+init()
+  }
+});
+
+
+//재시작 버튼
+btnre.addEventListener("click", function(){
+  ou = 0;
+  out.innerHTML = ou;
+  init();
+  btnst.disabled = false;
+  btnba.disabled = false;
+  btnre.style.display="none"
+
+})
+
+
+
+
+//중복되는 코드가 있을 땐, 함수로 처리. - 유지보수 및 기능추가 등 할때 매우 유용
+function init(){ //strkie, ball count initialization
+  st = 0;
+    ba = 0;
+    strike.innerHTML=st;
+    ball.innerHTML=ba;
+}
+
+
+
+</script>
+</html>

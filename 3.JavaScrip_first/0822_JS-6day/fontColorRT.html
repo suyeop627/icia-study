@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="5">
+<title>글자색 변경하기</title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+    <h1 id = "elem">글자 색상이 변경 된다.</h1>
+    <button  id = "btn" onclick = change1()>색상 변경</button>
+</body>
+<!--script-->
+<script>
+
+var elem = document.getElementById("elem");
+var btn = document.getElementById("btn");
+
+var fColor = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+var i = -1;
+
+
+function change1(){
+      
+    i++; 
+
+    if(i==fColor.length){
+        i=0;          
+    }
+
+    elem.style.color = fColor[i];
+ 
+    setInterval(change1, 500)
+
+    // function change2(){
+//     setInterval(change1, 500)
+// }
+};
+
+
+
+
+
+</script>
+</html>

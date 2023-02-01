@@ -1,0 +1,111 @@
+list (목록 태그) ->navbar 작성시 활용
+    html 문서 내 리스트를 출력
+    종류
+        1. 순서 목록 - Ordered List > <ol>
+            숫자, 알파벳 등으로 넘버링하여 출력
+            순서 표기 방식 변경 : type
+                type="1" -> 1. 2. 3. 4. ...
+                type="A" -> A. B. C. D. ...
+                type="a" -> a. b. c. d. ...
+                type="I" ->I. II. III. IV. ...
+                type="i" ->i. ii. iii. iv. ...
+    https://www.w3schools.com/cssref/playit.asp?filename=playcss_ol_list-style-type&preval=armenian
+
+
+        2. 비순서 목록 - Unordred List <ul> 
+            도형을 사용하여 목록을 표현
+            style 속성으로 표기 모양 변경   
+            style="list-style-type: disk;" - ●
+            style="list-style-type: circle;" - ○
+            style="list-style-type: square;" - ■
+            style="list-style-type: none;" - 도형제거  
+
+
+    목록의 항목을 표현하는 태그 - List item > <li>
+
+
+        3. 사용자(개발자) 정의 목록 (definition list)
+            <dl> - 정의 목록 태그
+            <dt> - 정의 용어 태그
+            <dd> - 정의 설명 태그
+                    
+
+
+
+table (표 태그)
+    웹 문서에 표를 작성하는 태그. 데이터를 행과 열로 표현(정렬). 
+    <table> : 표 영역을 나타내는 태그
+    <tr> table row : 행을 표현하는 태그
+    <th> : 열을 표현하는 태그. 열의 제목을 표현하는 태그
+    <td> : 열을 표현하는 택,. 데이터를 작성하는 태그 
+
+    *규칙
+    모든 행은 열의 개수가 같다. 
+    모든 열의 가로길이는 동일하다.
+
+    <caption> 표의 제목을 붙이는 태그
+        항상 표 위에 제목이 붙는다.(css로 변경 가능)
+
+    열/행 병합 - 속성을 사용하여 병합을 처리
+                        +)분할은 불가능
+        열 병합 : colspan - 병합할 열의 개수를 지정
+        행 병합 : rowspan - 병합할 행의 개수를 지정
+    
+    표, 열, 행의 너비와 높이 설정 width(열) ,height(행)
+    각 열의 너비는 <th>또는 <td>태그에서 설정 
+    <th width="100"> 전체적으로 같은 값으로 설정하는 경우 CSS로 처리
+    
+    colgroup 태그 : td(th)에 적용할 스타일을 미리 정의하여 적용
+            보조태그 <col> : 스타일이 적용될 열을 표현.
+                    속성: span - 다중의 열을 선택
+                    
+    테이블 시맨틱 태그(semantic tag) 
+    <thead> :표의 제목부분
+    <tbody> : 표의 몸통(데이터) 부분
+    <tfoot> : 표의 바닥부분
+    *시맨틱 태그 - header, nav, aside, section, footer 등으로 구분해서 관리하는거? 나중에 찾아보기
+    테이블의 시맨틱 테그는 head, food, body에 따라 보여지는 순서가 정해짐
+    (html 문서 기준 위치가 아님)
+
+
+
+
+
+이미지 태그 보충
+    자원의 위치 - html 파일과 이미지 파일이 같은 폴더에 저장되어 있지 않은 경우의 처리
+    경로의 처리 : 하위폴더에 자원(html, image등) 으로 접근 -> '폴더명/파일명'
+                 상위 폴더로 접근 -> '../파일명'
+                 같은 폴더 안의 파일을 활용할 때는 경로를 붙이지 않는다.
+
+
+
+
+메타 태그(meta tag) - <head> 요소에 포함되는 태그. 화면에 보여지지 않지만, 처리해야하는 정보들을 포함
+
+
++)character set - 문자 집합. 
+                문자를 숫자로 매칭시킨 집합..?
+                아스키코드, euk-kr 등
+                전체적으로 통합해서 쓰는게 unicode 중 하나인 utf-8
+                페이지가 사용하는 characterset을 상단에 표시함.
+
+            
+
+
+
+메타 데이터란?
+    웹서버와 웹 브라우저 간에 상호 교환되는 정보를 정의하는 데 사용하는 데이터.
+    문자집합 지정 - charset 
+    그밖에 문서의 작성자, 문서의 키워드, 문서의 설명 등을 담고 있는 요소. *크롤링, 저작관 관련
+
+    반응형 웹을 만들 떄 사용하는 viewport를 지정.(미디어 쿼리)
+
+
+    관련 속성
+    name : 메타 정보의 이름
+    content : 이름에 해당하는 정보를 기술
+
+멀티미디어(오디오, 비디오, 유튜브)
+    저작권
+
+<form>태그 - 

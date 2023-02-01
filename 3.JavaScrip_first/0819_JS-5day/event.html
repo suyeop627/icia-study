@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="2022.08.19-1">
+<title>Event</title>
+<style>
+    div{
+        width : 250px;
+        height : 250px;
+        background-color: lightgray;
+
+    }
+</style>
+</head>
+
+
+<!-- <body onload="alert('로딩완료')"> -->
+<!-- <body onload="location.href='https://www.icia.co.kr'"> -->
+    <!-- 로딩이 다 됐을 때 실행할 것을 설정 다른페이지로 이동할때 onload사용할 수 있음 -->
+<body>
+    <div = id="mouse" onmouseover="mouseEvent('over')" 
+                      onmouseout="mouseEvent('out')">
+                    <!-- 함수이름은 같지만, parameter에따라서 결과가 달라지는걸 overloading이라함 -->
+    </div>
+
+
+    <br/>
+    <hr>
+    <fieldset>
+        <legend>현재 시간 구하기</legend>
+        <h3 id="now"></h3>
+        <button onclick="getNow()">현재시간</button>
+        <!--   
+             태그 사이에 입력한게 버튼에 출력됨
+             (input type button의 value) -->
+    </fieldset>
+    <br/>
+    <hr>
+
+    <fieldset>
+        <legend>Key Event</legend>
+        <input type="text" id="keyevt" onkeydown="keyEvent('down')" onkeyup="keyEvent('up')">
+        <h2 id="typing"></h2>
+    </fieldset>
+<br/>
+<hr>
+
+<fieldset>
+    <legend>select & option</legend>
+
+    <select onchange="changeSelect()" id="myObj">            <!-- selected를 속성으로 부여하면, 리스트에서 처음으로 보이게 할 수 있음(복습)-->
+        <option>과목선택</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>javaScript</option>
+        <option>jQuery</option>
+    </select>
+    <h2 id="result"></h2>
+
+</fieldset>
+
+
+</body>
+<!--script-->
+<script>
+
+/*
+(1) onload : 브라우저가 모든 페이지를 로딩한 후 실행되는 이벤트
+(2) onmouseover : 마우스가 영역 위로 올라왔을 경우 실행
+(3) onmouseout : 마우스가 영역 밖으로 벗어났을 경우 실행
+(4) onclick : 마우스를 클릭했을 경우 실행
+(5) onkeydown : 키보드의 키가 눌렸을 경우 발생
+(6) onkeyup : 눌려있던 키보드가 떨어졌을 경우 발생 ( onkeydown이 발생한 상태에서만 실행 가능)
+(7) onchange : 해당 요소에서 변화가 있을 경우 발생
+*/
+
+function mouseEvent(evt){
+    //하나의 함수에서 if로 매개변수를 여러개 지정할 수 있음
+    if(evt=='over'){
+        document.getElementById("mouse").innerHTML = "mouse over!!";
+//마우스가 윌 올라왔을 때
+    }
+   if(evt=='out'){
+    document.getElementById("mouse").innerHTML = "mouse out!!";
+    }
+//마우스가 요소 밖으로 나갔을 때
+}        
+
+
+
+function getNow(){
+    var date =  new Date();   //Date(); 자바스크립트에서 기본적으로 제공하는 함수
+    document.getElementById("now").innerHTML = date;
+ //날짜 출력
+}
+//new -  
+
+
+//onkeydown/up
+
+/*
+function keyEvent(kevt){
+    if(kevt=='up'){
+        document.getElementById("typing").innerHTML="key up"
+    }
+    if(kevt=='down'){
+        document.getElementById("typing").innerHTML="key down"
+    }
+}*/
+
+//입력한 내용을 h2에 출력
+function keyEvent(keyevt){
+    if(kevt=='up'){
+
+        var msg = document.getElementById("keyevt").value;
+        document.getElementById("typing").innerHTML=msg;
+    }
+    if(kevt=='down'){
+        var msg = document.getElementById("keyevt").value;
+        document.getElementById("typing").innerHTML="<span style='color:blue'>"+msg;+"</span>"
+    }
+}
+
+
+//변화 이벤트
+function changeSelect(){
+    var myObj = document.getElementById("myObj").value;
+    document.getElementById("result").innerHTML = myObj;
+}
+
+
+/*이런식으로 사용가능 (키보드에 입력되고 있는 값이랑 아이디(icia)랑 비교.)
+
+if(evt=='change'){
+    var id = document.getElementById("keyevt").value;
+    if(id=='icia'){
+        document.getElementById("typing").innerHTML = "이미 사용중인 아이디 입니다.";
+    }else{
+        document.getElementById("typing").innerHTML = "사용가능한 아이디 입니다.";
+    }
+} 
+입력값과 비교할 때, enter키를 눌러야 결과확인 가능
+onkeyup에 적용할 수도 있음 타이핑 하다가 id와 잆력값이 같아지면, 
+사용중인 아이디라는 문구 출력됨.*/
+
+
+</script>
+</html>

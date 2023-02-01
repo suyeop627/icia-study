@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="8">
+
+<title>입력한 값 보여주기</title>
+<style>
+
+</style>
+</head>
+<!--body-->
+<body>
+    <h1> 입력한 내용 : <span id="txt1"></span></h1>
+    <br/>
+
+    <input type="text" id = "input1" onkeyup="keyEvent()"><span id="txt2">(0자 입력)</span>
+</body>
+<!--script-->
+<script>
+function keyEvent(){
+
+var txt1 = document.getElementById("txt1");
+var txt2 = document.getElementById("txt2");
+var input1 = document.getElementById("input1");
+var input2 = input1.value;
+
+//input2.length : 우리가 입력한 글자의 수
+
+if(input2.length>=0 && input2.length<=5){
+    txt2.style.color = "black";
+    
+ } else if(input2.length >=6 && input2.length < 10){
+    txt2.style.color="orange";
+
+}   else{
+    txt2.style.color = "red"
+    alert('더 이상 입력할 수 없습니다.');
+
+    input2 = input2.slice(0, 10);
+    //0부터 9까지 보여주고, 10부터 잘라낸다.
+    input1.value = input2;
+
+}
+
+txt1.innerHTML = input2;
+txt2.innerHTML="(" + input2.length + "자 입력)"
+}
+
+
+</script>
+</html>

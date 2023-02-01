@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="9">
+<link rel="shortcut icon" href="favicon.png">
+<title>history</title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+    <button onclick = "goNaver()">네이버 페이지로 이동하기</button>
+    <button onclick = "goBack()">이전 페이지로 이동하기</button>
+    <button onclick="goForward()">다음 페이지로 이동하기</button>   
+    <!-- 브라우저의 뒤로가기 앞으로가기와 같은 기능 -->
+    
+</body>
+<!--script-->
+<script>
+
+function goNaver(){
+    location.href="http://naver.com";
+}
+function goBack(){
+    window.history.back();
+}
+function goForward(){
+    window.history.forward();
+}
+</script>
+</html>

@@ -1,0 +1,13 @@
+a:hover{
+    background-color : yellow;
+    color : black;
+
+}
+a{
+    text-decoration: none;
+    color : black;
+
+}
+a:visited{
+    color : darkgray;
+}

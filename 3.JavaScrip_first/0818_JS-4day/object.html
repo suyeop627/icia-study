@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="">
+<title>객체(object)</title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+    <h3 id="car1"></h3>
+    <h3 id="person1"></h3>
+
+</body>
+<!--script-->
+<script>
+    // 객체(object) : 다른 것과 식별이 가능한 것
+    //자신만의 고유한 특성과 행동을 지니며, 다른 객체들과 상호작용을 한다.
+
+    //객체를 만드는 방법, object를 선언하는 방법
+
+    //(1) var object1 = {};
+    //(2) var object2 = new object();
+    
+
+    //자동차(car) 객체(object) 만들기 - 객체 생성 방법 (1)
+    var car ={
+     // key    : value 
+        name : "Model S",
+        company : "Tesla",
+        color : "balck",
+        type : "electric"
+    };
+
+    //객체의 property를 추가할 때
+    car.number = 4885;
+    car["a"]="aa";
+    
+    console.log(car);
+
+
+    //차 이름은?
+    var car1 = document.getElementById("car1");  //var car1 임의의 이름으로 선언한 변수,  id=car1은 h3의 아이디
+    //car1= <h3 id="car10"></h3>
+    car1.innerHTML=car.name;//앞의 car1은 먼저 선언한 변수, 뒤의 car는 object의 이름
+    // <h3 id = "car1">Model S></h3>
+
+
+
+
+
+    //myCar 객체 만들어 보기
+    var myCar ={       
+        name : "jeep Wrangler Rubicon",
+        color : "black",
+        engineType : "gas",
+        transmission : "6-speed manual", 
+        DraveType : "Four wheel drive",
+        Cylinders : "V6",
+        TotalSeating : "5",      
+    }
+
+
+//사람 객체 생성 -객체 생성 방법(2)
+var person = new Object();
+
+person["name"] ="김수엽";
+person["age"] =31;
+person["phone"] ="010-123-1234";
+car.b="bb";
+console.log(person);
+
+var txt="";
+for(var i in person){
+    console.log("key : " + i);
+    console.log("value : " + person[i]);
+    txt += i + " : " + person[i] + "<br/>";
+}
+var person1 = document.getElementById("person1");
+person1.innerHTML = txt;
+// person1.innerText = txt; 줄바꿈 적용 안됨
+
+//key값의 개수만큼 i 반복 ->변수 i에 key값을 넣음
+// element.innerText;
+// 이 속성은 element 안의 text 값들만을 가져옵니다.
+// element.innerHTML;
+// innerText와는 달리 innerHTML은 element 안의 HTML이나 XML을 가져옵니다.
+
+</script>
+</html>

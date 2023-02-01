@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="">
+<title></title>
+<style>
+/*
+(1)"5초후에 Daum 홈페이지로 이동합니다"라는 메세지 출력
+(2)시간이 지날수록 1초씩 줄어들도록
+(3) 5초가 지나면 "페이지가 이동합니다." 라는 알림창 생성
+(4)확인버튼을 누르면 다음페이지로 이동.
+*/
+
+
+</style>
+</head>
+
+<!--body-->
+<body  onload="timer()">
+<h1 id="interval"></h1>
+
+</body >
+<!--script-->
+<script>
+var x=5
+var myTime;
+
+function timer(){ 
+    setTimeout(function(){
+        document.getElementById("interval").innerHTML=x + "초 뒤에 다음 홈페이지로 이동합니다."
+        
+    }, 5000)
+    if(x=0){
+        alert("페이지가 이동됩니다.")
+        
+    }
+}
+
+
+
+
+</script>
+</html>

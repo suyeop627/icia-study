@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>position 조합</title>
+    <style>    
+     body {
+        height: 1000px;
+     }   
+     .abs { 
+        width: 200px; 
+        height: 100px;
+        position: absolute; /*div 부모요소 안에 포함되는게 맞지만, absolute 속성 사용하면 부모요소 범위 밖으로 나감
+                                이때, 부모요소에 relative속성 사용하면, 부모요소 내부에서 absolute요소가 움직임*/
+        bottom: 10px;
+        right: 10px;
+    }
+    .rel{
+        width: 400px;
+        height: 200px;
+        position: relative ;
+
+    }
+    div {
+        border: 2px solid red;
+    }
+
+    </style>
+</head>
+<body>
+    <h2>relative와 absolute의 조합</h2>
+    <div class="rel">부모 요소(position-relative)
+        <div class="abs">자식 요소 (position-absolute)</div>
+    </div>
+</body>
+</html>

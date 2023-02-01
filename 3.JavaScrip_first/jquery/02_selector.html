@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="3">
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <title></title>
+</head>
+
+<body>
+  <h1>H1 태그...</h1>
+  <p>태그만 있는 녀석, 그리고 첫번째 p</p>
+  <p class="cls">클래스 가 있는 녀석</p>
+  <p id="demo">아이디가 있는 녀석</p>
+  <button id="none">다 없애라!!</button>
+  <button id="show">p.cls 없애라!!</button>
+  <button id="first">첫번째 p</button>
+
+
+  <input type="button" onclick="test(this)" value="this Test">
+</body>
+<script>
+  //this : 현재 작업중인 객체의 참조변수
+  function test(obj) {
+    console.log(this);
+    console.log(obj);
+  }
+  test();
+  test(this);
+
+
+
+  $('p').click(function () {
+    console.log(this); //jQuery 메소드에서는 this는 항상 현재 작업중인 엘리먼트를 가리킨다.
+    $(this).css('color', 'red')
+  })
+
+
+
+
+  //+) this 키워드 사용할 땐, 화살표 함수 사용 불가(this에 windows객체가 저장된다)
+  $('#first').click((evt) => $('p:first').css('background-color', 'yellow'));
+
+  //화살표 함수에서 실행할 문장이 두문자 ㅇ이상일 경우, 중괄호로 실행문을 감싸야한다.
+  $('#even').click(() => {
+    $('p:first').css('color', 'red');
+    turnBack();
+  });
+
+
+  $('#show').click(function () {
+    $('p.cls').hide();
+    turnBack();
+  });
+
+  $("#none").click(function () {
+    console.log($("*"));
+    $("*").hide();
+    turnBack();
+  });
+
+  function turnBack() {
+    setTimeout(function () {
+      $("*").show(); //script까지 모두 포함해서 보인다.
+      $('script').hide(); //그래서 script태그를 hide한다.
+    }, 3000);
+  }
+</script>
+
+</html>

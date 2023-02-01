@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>논리 연산자</title>
+
+
+</head>
+<!--body-->
+<body>
+    
+    
+</body>
+<!--script-->
+<script>
+/*
+    -논리 연산자 : AND연산, OR연산 NOT연산
+    -논리형 데이터 (true / false) 연산   
+
+ [1] AND 연산 : &&
+                A && B 일때,
+                A와 B가 모두 true일때 결과는 true
+                A와 B중에 하나라도 false가 있으면 결과는 false
+ [2] OR 연산 : || 
+                A || B 일때,
+                A와 B중 하나라도 ture가 있으면 결과는 true
+                A와 B가 모두 false일떄 결과는 false
+
+ [3] NOT 연산 : !
+                !A 일때,
+                 A가 true명 결과는 false
+                 A가 false면 결과는 true
+
+*/
+var result ;
+
+//&&연산
+result = true && true; //true
+console.log("true && true : " + result);
+
+result = false && true; //false
+console.log("false && true : " + result);
+
+result = true && false; //false
+console.log("true && false : " + result);
+
+result = false && false; //false
+console.log("false && false : " + result);
+
+result = (5>3) && (3<2);  //false
+console.log("(5>3) && (3<2) : " + result);
+
+//둘다 true면 true  둘다 false면 false
+//둘중 하나라도 false면 &&은 false
+//둘중 하나라도 false면 ||는 true
+
+//||연산
+result = true || true;  //ture
+console.log("true || true : " + result);
+
+result = true || false;  //ture
+console.log("true || false : " + result);
+
+result = false || true;  //ture
+console.log("false || true : " + result);
+
+result = true || true;  //false
+console.log("true || true : " + result);
+
+result = (5>3) || (3<2);  //true
+console.log("(5>3) || (3<2) : " + result);
+
+
+//!연산
+
+result = !true;
+console.log("!true : " + result);
+
+result = !false;
+console.log("!false : " + result);
+
+result = !!false;
+console.log("!!false : " + result);
+
+
+</script>
+</html>

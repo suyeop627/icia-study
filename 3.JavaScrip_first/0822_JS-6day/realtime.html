@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="2">
+<title>today</title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+<button onclick = today1()>today1</button>
+<button onclick = time1()>time1</button>
+<h1 id = "result"></h1>
+</body>
+<!--script-->
+<script>
+
+function today1(){
+    var today =  new Date();
+    // document.getElementById("result").innerHTML = today;
+
+    //년(year)
+    var yy = today.getFullYear();
+
+    //월(month)
+    var mm = today.getMonth();+1        //getMonth를 쓸 때는 +1을 해줘야함
+    
+    //일(day)
+    var dd = today.getDate();
+   
+    //요일(days)
+    var day = today.getDay();
+
+
+    var days = ["일", "월", "화", "수", "목", "금", "토"]  //배열
+
+
+    document.getElementById("result").innerHTML = 
+    yy + "년 " + mm + "월 " + dd + "일 " + days[day] + "요일";
+
+}
+
+
+function time1(){
+    var time = new Date();
+
+    //시
+    var hh = time.getHours();
+    //분
+    var mi= time.getMinutes();
+    //초
+    var ss = time.getSeconds();
+
+    hh = checkTime(hh);
+    mi = checkTime(mi);
+    ss = checkTime(ss);
+
+
+    document.getElementById("result").innerHTML = 
+    hh + "시 " + mi + "분 " + ss + "초 " ;
+
+    
+
+    function checkTime(i){
+        if(i<10){
+            i = "0"+i;
+        }
+        return i;
+    }
+
+}
+//실시간으로 시간 보이게 하기( 짧은 주기로 반복 실행)
+//time1버튼 누르기도 전에 실행됨.
+//이걸 방지하기 위해서 재귀함수의 형태로 time()함수 안에     setInterval(time1, 500);이거를 넣음
+
+
+</script>
+</html>

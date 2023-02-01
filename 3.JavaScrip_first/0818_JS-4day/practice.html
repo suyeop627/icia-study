@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ChoiDeokchun">
+    <meta name="date" content="">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+             padding: 0
+        }
+
+        input {
+            width: 600px;
+            height: 100px;
+            font-size: 50px;
+        }
+
+        h3 {
+            font-size: 30px;
+            margin: 100px;
+        }
+
+        div#diva {
+            margin-left: 100px;
+            padding-left: 100px;
+            padding-top: 150px;
+            border: 3px solid black;
+            width: 700px;
+            height: 400px;
+        }
+
+        #div1 {
+            margin-left: 330px;
+            width: 300px;
+            z-index: 10;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<!--body-->
+
+<body>
+    <div id="div1">
+        <img src="bank.png" width="300px">
+    </div>
+
+    <div id="diva">
+
+        <input type="number" id="input1" placeholder="금액을 입력해주세요."><br>
+        <br>
+        <br>
+
+        <img src="deposit.png" title="입금" onclick="account.deposit()" width="100px" height="100px">
+        <img src="withdrwal.png" title="출금" onclick="account.withdrawal()" width="100px" height="100px">
+
+        <img src="balance.jpg" title="조회" onclick="account.toString()" width="100px" height="100px">
+
+
+
+
+        <h3 id="balance"></h3>
+    </div>
+</body>
+<!--script-->
+<script>
+
+    var account = {};
+    account.balance = 0;
+
+
+
+
+
+    account.deposit = function (amount) {
+        var amount = Number(document.getElementById("input1").value);
+        this.balance += amount;
+        document.getElementById("balance").innerHTML = (amount + "원 입금되었습니다.")
+
+
+    }
+
+
+    account.withdrawal = function (amount) {
+        var amount = Number(document.getElementById("input1").value)
+
+        if (this.balance >= amount) {
+            this.balance -= amount;
+            document.getElementById("balance").innerHTML = (amount + "원 출금되었습니다.")
+        } else {
+            alert("잔액이 " + Number(amount - this.balance) + "원 부족합니다.")
+            document.getElementById("balance").innerHTML = ("잔액이 " + Number(amount - this.balance) + "원 부족합니다." + "<br/>" + "현재 잔액은 " + amount + " 원 입니다.")
+
+        }
+    }
+
+
+    account.toString = function () {
+        document.getElementById("balance").innerHTML = ("현재 잔액은 " + this.balance + "입니다")
+    }
+
+
+</script>
+
+</html>

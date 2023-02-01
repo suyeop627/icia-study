@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+<body>
+  <ol>
+    <li>List item 1</li>
+  </ol>
+  <button id="apnd">Append</button>
+  <button id="create">Create</button>
+
+  <script>
+    let i = 1;
+    $('#apnd').click(function(){
+      i++;
+      $('ol').append('<li>List item '+i+'</li>'); //종료태그를 작성하지 않아도 괜찮지만, 태그 사이에 값을 넣을 땐, 종료태그 작성해야한다.
+      $('<li>List item '+i+'</li>').appendTo('ol');
+    });
+  
+
+    $('#create').click(function(){
+      let $elem = $('<input>')  //$('input') : 존재하는 input 태그 선택. $('<input>') 새로운 input태그 생성
+      $elem.attr('type','text');
+      //let $elem = $("<input type='text'>"); 태그에 속성을 부여해서 생성
+      $('body').append($elem)
+      $elem.appendTo('body');
+
+      $($elem.val('hello'));
+      $elem.val('hello').prop('readonly', true);
+      $elem.val('hello').prop('disabled', true);
+
+      console.log($elem.prop('disabled'))
+      
+    });
+
+
+  </script>
+</body>
+</html>

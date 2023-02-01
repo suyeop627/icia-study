@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">    
+    <title>다양한 입력 양식 1</title>
+</head>
+<body>
+    <form>
+        <h>입력 양식 1</h3>
+        <p><input type="color" name="co"></p>
+        <p><input type="number" name="num" 
+            min="0" max="10"> </p>
+        <p><input type="range" name="ran"
+            min="-50" max="150"></p>
+        <p><input type="file" name="upfile" multiple></p>
+        <p><input type="submit" value="전송"></p>
+    </form>
+    <hr>
+    <form>
+        <h3>다양한 입력 양식 2</h3>
+        <p>이메일 : <input type="email" name="email"></p>
+        <p>사이트 : <input type="url" name="adress"></p>
+        <p>전화번호 : <input type="tel" name="tel" pattern="\d{2,3}-\d{3,4}-\d{4}"></p> 
+        <!--\d는 십진수, {3,4}는 3자리 또는 4자리의 수-->
+        <input type="submit" value="전송"></p>
+    </form>
+</body>
+</html>

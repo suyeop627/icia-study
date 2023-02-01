@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>그림자 효과</title>
+    <style>
+        h1{
+            width: 300px;
+        }
+        .c1{
+            background-color: yellow;
+            border: 5px solid blue;
+            box-shadow: 10px 10px 5px teal;
+        }
+        .c2{
+            background-color: orange;
+            border: 5px solid red;
+            box-shadow: 20px 20px 50px red;
+        }
+        .c3 { 
+            background-color: silver;
+            border: 5px solid black;
+            box-shadow: 20px 20px 30px 20px maroon;
+        }
+        .c4 {
+            background-color: yellow;
+            border: 5px solid olive;
+            box-shadow: 10px 10px 5px 10px gray inset;
+        }
+        div {
+            width: 250;
+            line-height: 50px; /*줄간격 - 요소의 상하 간격을 동일하게 지정해서, 가운데정렬하는 거로 응용 가능*/
+            font-size: 20px;
+            text-align: center ;
+        }
+        #d1 { 
+            border: 1px solid rgba(102, 185, 255, 0.4);
+            box-shadow: 0 0 20px 10px  rgba(102, 185, 255, 0.4);
+        }
+        #d2 {
+            border: 1px solid black;
+            box-shadow: 10px 10px #bce55c, 
+                        20px 20px #cef279,
+                        30px 30px #e4f7ba;
+        }
+        img {
+            padding: 20px;
+            padding-bottom: 60px;
+            margin: 20px;
+            box-shadow: 5px 5px 10px #000;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class="c1">박스 스타일링 1</h1>
+    <h1 class="c2">박스 스타일링 2</h1>
+    <h1 class="c3">박스 스타일링 3</h1>
+    <h1 class="c4">박스 스타일링 4</h1>
+    <hr>
+    <br>
+    <div id="d1">박스 스타일링 5</div>
+    <br><br><br>
+    <div id="d2">박스 스타일링 6</div>
+    <br><br><br>
+    <hr>
+    <img src="../0801_second-html/IMG_7578.jpg" width="300">
+    <br><br>
+</body>
+</html>

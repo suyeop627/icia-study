@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>선택 목록</title>
+</head>
+
+<body>
+    <h2>휴대전화 번호 입력</h2>
+    <form>
+        <select name="nums">
+            <option value="sk">SK</option>
+            <option value="kt" selected>KT</option>
+            <option value="lg">LG</option>
+            <option value="etc">기타</option>
+        </select>
+        <hr>
+    </form>
+    <h2>자동차 브랜드(다중선택)</h2>
+    <form>
+        <select name="cars" multiple size="3">
+            <option value="hy">현대</option>
+            <option value="ki">기아</option>
+            <option value="bmw">BMW</option>
+            <option value="be">Benz</option>
+            <option value="sm">SM</option>
+        </select>
+
+    </form>
+    <hr>
+    <h2>datalist</h2>
+    <form>
+            <input list="brs" name="brws"> <!--리스트 brs를 넣음-->
+            <datalist id="brs">             <!--리스트의 id를 brs로 정함-->
+                <option value="edge">엣지</option>
+                <option value="crome">크롬</option>
+                <option value="safary">사파리</option> 
+                <option value="opera">오페라</option> 
+                
+            </datalist>
+    </form>
+<hr>
+<h2>Label</h2>
+<form>
+    <h3>당신의 성별은?</h3>
+    <label for="man">남성</label>
+    <input id="man" type="radio" name="gender" value="M">
+    <label for="woman">여성</label>
+    <input id="woman" type="radio" name="gender" value="F">
+    <input type="submit" value="전송">
+</form>
+
+
+</body>
+
+</html>

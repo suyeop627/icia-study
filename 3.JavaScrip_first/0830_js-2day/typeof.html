@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="">
+  <title></title>
+  <style>
+
+  </style>
+</head>
+
+<!--body-->
+
+<body>
+
+</body>
+<!--script-->
+<script>
+  let a;
+  console.log("a의 값은 " + a);
+  console.log("a의 타입은 " + typeof (a));
+  let b = 100;
+  console.log("b의 값은 " + b);
+  console.log("b의 타입은 " + typeof (b));
+  b = "100";
+  console.log("b의 값은 " + b);
+  console.log("b의 타입은 " + typeof (b));
+
+  let arr = [1, 2, 3, 4, "5", 6]; //배열 : 변수를 묶어서 사용
+  arr.forEach(function (item, idx) {         //foreach - 배열에 있는 것을 가져와서 하나씩 처리(item - 배열의 값 , idx 인덱스 => 첫번째 foreach에서, item=1, idx=0)
+    console.log(item);
+    console.log(idx + "번째 값의 타입은 " + typeof (item))
+  });
+
+  let sum = 0;
+  arr.forEach(function (item) {
+    sum += item;    // 배열의 원소를 하나씩 꺼내서 누적
+
+  });
+  console.log(sum);   //출력값 1056
+
+  console.log(typeof sum) /*출력값 string - number type + string type = string type
+                            sum -=item을 할 경우, string type을 number type으로 변환해서 출력됨.
+                            javascript는 string과 number를 함께 연산할 경우, 
+                            +연산에서는 string으로, 그 외 연산은 number로 변환해서 계산한다.*/
+
+</script>
+
+</html>

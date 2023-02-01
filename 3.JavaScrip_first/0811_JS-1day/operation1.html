@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <!--head-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관계 (비교) 연산자t</title>
+</head>
+<!-- body -->
+<body>
+    
+</body>
+<!-- script -->
+<script>
+/*  비교 연산 부호
+    >  크다
+    <  작다
+    >= 크거나 같다
+    <= 작거나 같다
+    == 같다
+    != 다르다
+*/
+//두개의 변수 num1과 num2의 7과 2를 선언
+
+//+console - 인수로 설정한 값을 디버거 콘솔에 표시하는 함수
+
+
+
+var num1 = 7;
+var num2 = 2;
+//var는 더이상 사용하지 않음. 다른거 쓰는데 그건 나중에 배울듯 but, 아직 여러 소스코드에서 var로 선언된 게 많아서 쓰임새정도는 알고 넘어가는게 좋음
+
+var result;
+
+// >(크다)의 결과
+result = num1 > num2;
+console.log(" >(크다)의 결과 : " + result);
+
+
+//<(작다)의 결과
+result = num1 < num2;
+console.log(" <(작다)의 결과 : " + result);
+/*result에 true라는 값이 이미 저장되어있지만, 새로 result를 선언하면, 
+ 이전에 있던 result값은 사라지고 새로운 값이 들어감.*/
+
+// >=(크거나 같다)의 결과 
+ result = num1 >= num2;
+console.log(" >=(크거나 같다)의 결과 : " + result);
+
+//<=(작거나 같다)의 결과 
+result = num1 <= num2;
+console.log(" <=(작거나 같다)의 결과 : " + result);
+
+
+//==(같다)의 결과 
+result = num1 == num2;
+console.log(" ==(같다)의 결과 : " + result);
+
+result = num1 != num2;
+console.log("!=(다르다)의 결과 : " +result);
+
+
+</script>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="">
+<link rel="shortcut icon" href="favicon.png">
+<title>표 꾸미기</title>
+<style>
+
+table  {
+    border-collapse : collapse;
+    width: 100%;
+}
+table, th, td {					/* th와 td는 정령 방식이 다름.좌 or 중앙) */
+    border-bottom : 1px solid #ddd;
+    text-align : center;  
+	
+
+}
+
+th, td {
+    padding : 5px;
+    height : 40px;
+    vertical-align : bottom;
+}
+
+th {
+    border-top : 1px solid #ddd
+}
+
+tr:nth-child(odd) {            /*짝수번째 행만 배경색 */
+    background-color: aliceblue;
+}
+tr:first-child{
+    background-color: rgb(162, 187, 235)!important; /*hover로 색상 바뀌는거 방지*/
+    color : white;
+}
+tr:last-child>td{
+    border-bottom:  1px solid black;
+}
+/* tr:hover{
+    background-color: #f5f5f5;       행단위로 색 지정
+ }  */
+
+td:hover{
+    background-color: #f5f5f5;  /*칸 단위로 선택*/
+}
+
+</style>
+</head>
+
+<!--body-->
+<body>
+<table>
+	<tr>
+		<th>성</th>
+		<th>이름</th>
+		<th>연락처</th>
+	</tr>
+	<tr>
+		<td>김</td>
+		<td>길동</td>
+		<td>010-1111-2222</td>
+	</tr>
+	<tr>
+		<td>나</td>
+		<td>길동</td>
+		<td>010-2222-3333</td>
+	</tr>
+	<tr>
+		<td>박</td>
+		<td>길동</td>
+		<td>010-3333-4444</td>
+	</tr>
+	<tr>
+		<td>장</td>
+		<td>길동</td>
+		<td>010-4444-5555</td>
+	</tr>
+	<tr>
+		<td>최</td>
+		<td>길동</td>
+		<td>010-5555-6666</td>
+	</tr>
+</table>
+</body>
+<!--script-->
+<script>
+
+</script>
+</html>

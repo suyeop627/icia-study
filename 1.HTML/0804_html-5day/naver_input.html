@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>네이버 : 회원가입</title>
+
+    <style>
+        body {
+            background-color: rgb(238, 238, 238);
+            text-align: center;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 style="color:rgb(1, 199, 1)"> NAVER</h1>
+    <br>
+    <form>
+        <p>
+            <b>아이디</b><br>
+            <input type="text" name="id" value="" required>
+        </p>
+        <p>
+            <b>비밀번호<br></b>
+            <input type="password" name="pwd" value="" required>
+        </p>
+        <p>
+
+            <b>비밀번호 재확인</b><br>
+            <input type="password" name="pwd" value="" required>
+        </p>
+        <p><b>이름</b><br>
+            <input type="text" name="name" value="" required>
+        </p>
+
+        <p><b>생년월일</b><br>
+
+            <input type="text" name="birthY" value="" required placeholder="년(4자)" maxlength="4" size="4">
+
+            <select name="month" required>
+                <option value="none">월</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+
+                <input type="text" name="birthD" value="" required placeholder="일" maxlength="2" size="4">
+        </p>
+        <p>
+            <b>성별</b><br>
+            <select name="gender" required>
+                <option value="nc">성별</option>
+                <option value="M">남성</option>
+                <option value="F">여성</option>
+                <option value="none">선택안함</option>
+            </select>
+
+        </p>
+        <p>
+            <b>본인 확인 이메일<small></b>(선택)</small>
+            <input type="email" name="email">
+
+        </p>
+
+        <p>
+            <b>휴대전화</b>
+            <input type="tel" name="tel" pattern="\d{2,3}-\d{3,4}-\d{4}" placeholder="전화번호 입력">
+            <input type="button" name="phone" value="인증번호 받기"><br>
+
+            <input type="number" name="checkNum" disabled placeholder="인증번호 입력하세요">
+        </p>
+        <p>
+            <input type="submit" name="reg" value="가입하기">
+
+        </p>
+        </table>
+
+    </form>
+    <small><a href=https://policy.naver.com/rules/service.html target="_blank">이용약관</a> |
+        <a href=https://policy.naver.com/policy/privacy.html target="_blank"><b>개인정보처리방침</b></a> |
+        <a href=https://policy.naver.com/rules/disclaimer.html target="_blank"> 책임과 한계와 법적고지</a> |
+        <a href=https://help.naver.com/service/5640/category/bookmark?lang=ko target="_blank"> 회원정보 고객센터<br></a>
+
+        &copy;NAVER Corp.</small>
+</body>
+
+
+</html>

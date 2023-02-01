@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월별날짜구하기(days)</title>
+</head>
+<!--body-->
+
+<body>
+    <fieldset>
+        <legend>해당 월의 날짜 구하기</legend>
+        <h3>구하려고 하는 월(month)을 입력해주세요!</h3>
+        <input type="text" id="month">
+        <input type="button" value="입력" onclick="month1()">
+
+        <h1 id="result"></h1>
+    </fieldset>
+    <!--xx월은 xx일까지 있습니다.-->
+</body>
+<!--script-->
+<script>
+
+
+
+    function month1() {
+        var mon1 = document.getElementById("month").value;
+        var day;
+
+        console.log("mon1 : " + mon1)
+
+        switch (mon1) {
+            case "1":
+                day = 31;
+                document.getElementById("result").innerHTML = mon1 +"월은 " + day + "일까지 있습니다.";
+                break;
+
+            case "2":
+                day = 28;
+                document.getElementById("result").innerHTML = mon1+ "월은 " +day + "일까지 있습니다.";
+                break;
+
+            case "3":
+                day = 31;
+                document.getElementById("result").innerHTML =  mon1+ "월은 " +day + "일까지 있습니다.";
+                break;
+
+            case "4":
+                day = 30;
+                document.getElementById("result").innerHTML =  mon1+ "월은 " +day + "일까지 있습니다.";
+                break;
+
+            case "5":
+                day = 31;
+                document.getElementById("result").innerHTML = mon1 +"월은 " +day + "일까지 있습니다.";
+                break;
+
+            case "6":
+                day = 30;
+                document.getElementById("result").innerHTML =  mon1 +"월은 " +day + "일까지 있습니다.";
+                break;
+
+
+            case "7":
+                day = 31;
+                document.getElementById("result").innerHTML =  mon1+ "월은 " +day + "일까지 있습니다.";
+                break;
+
+            case "8":
+                day = 31;
+                document.getElementById("result").innerHTML = mon1+ "월은 " +day + "일까지 있습니다.";
+                break;
+
+            case "9":
+                day = 30;
+                document.getElementById("result").innerHTML = mon1+ "월은 " +day + "일까지 있습니다.";
+                break;
+
+            case "10":
+                day = 31;
+                document.getElementById("result").innerHTML = mon1 +"월은 " +day + "일까지 있습니다.";
+                break;
+
+            case "11":
+                day = 30;
+                document.getElementById("result").innerHTML = mon1 +"월은 " +day + "일까지 있습니다.";
+                break;
+
+            case "12":
+                day = 31;
+                document.getElementById("result").innerHTML =  mon1 +"월은 " +day + "일까지 있습니다.";
+                break;
+
+
+            default: document.getElementBy("result").innerHTML = "잘못 입력했습니다. 숫자로 입력 해주세요.";
+                break;
+        }
+    }
+
+</script>
+
+</html>

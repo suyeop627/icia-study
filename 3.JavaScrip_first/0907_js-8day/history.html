@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="2">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+  <p>현재 페이지 : <span id = "curr"></span></p>
+  <p>
+    <button onclick="goBack()">뒤로가기</button>
+    <button onclick="goForward()">앞으로가기</button>
+  </p>
+  <hr>
+  <p>주소 : <input type="text"id="urlstr">
+  <button onclick="go()">이동</button>
+</p>
+</body>
+<!--script-->
+<script>
+  //페이지 이동 처리
+  const urlstr=document.getElementById("urlstr");
+  function go(){
+    let u = urlstr.value;
+    location.href = `http://${u}`;  //input을 만들어서 url을 받을 경우, 프로토콜 입력안하면 페이지 이동이 안됨.
+    //location.href는 현재의 페이지 정보(경로 포함 html 파일명)를 저장하고 있는 변수.
+    //->이 변수의 값을 바꾸면 페이지를 변경할 수 있음.
+
+  }
+
+
+  const curr = document.getElementById("curr");
+  curr.innerHTML = window.location.href;
+//const curr = document.getElementById("curr").innerHTML = window.location.href;
+//일회성 변수일 경우, 굳이 따로 만들 필요 없이 합치는 것도 괜찮음
+//메소드 체인??
+
+//절대위치(원점에서의 위치) / 상대위치(좌표상의 다른 요소로부터의 거리)
+
+  function goBack(){
+    window.history.back()
+  }
+
+  function goForward(){
+   history.forward()      //이 경유, window 생략가능ㄴ
+  }
+</script>
+</html>

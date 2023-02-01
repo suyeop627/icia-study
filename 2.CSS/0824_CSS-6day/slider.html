@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="">
+<link rel="shortcut icon" href="favicon.png">
+<title></title>
+<!-- 외부 css파일을 포함시킴(link / @import) -->
+<link type = "text/css" rel="stylesheet" href="slider.css">
+<style>
+    /* @import url(); */
+</style>
+</head>
+
+<!--body-->
+<body>
+    <!--input과 label은 슬라이더 제어, li로 이미지 보여줌-->
+    <div class="image_slider">   <!-- 같은 name으로 정해놔야 하나의 셋 안에 radio버튼 생성 -->
+        <input type="radio" name="pos" id="pos1" checked>          <!-- 슬라이드 첫장이 시작부터 보이도록 -->
+        <input type="radio" name="pos" id="pos2" >
+        <input type="radio" name="pos" id="pos3" >
+        <input type="radio" name="pos" id="pos4" >
+
+        <ul>
+            <li>첫번째 화면(이미지)</li>        <!--radio 버튼과 같은 개수로 li생상-->
+            <li>두번째 화면(이미지)</li>
+            <li>세번째 화면(이미지)</li>
+            <li>네번째 화면(이미지)</li>
+        </ul>
+        <p class ="pos"><!--label을 누르면, 연결된 radio버튼이 선택됨-->
+            <label for ="pos1"></label><!--라디오 버튼은 모양을 바꿀 수가 없어서, 버튼을 숨기고 lable로 묶어서 모양을 만듦-->
+            <label for ="pos2"></label>
+            <label for ="pos3"></label>
+            <label for ="pos4"></label>
+        </p>
+    </div>
+</body>
+<!--script-->
+<script src="slider.js">
+
+</script>
+</html>

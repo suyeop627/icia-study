@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="ChoiDeokchun">
+<meta name="date" content="2">
+<link rel="shortcut icon" href="favicon.png">
+<title>Transform</title>
+<style>
+    div {
+        width : 50px;
+        height : 50px;
+        border: 1px solid;
+        background-color: red;
+        margin-left: 50px;
+        transition: transform, 1s;
+
+    }
+
+    .b1:hover {
+        /* transform: translate(20px, -10px); */
+        transform:translateX(20px)
+    }
+    .b2 {
+        border-radius: 50%;
+        padding : 10px;
+    }
+
+    .b2:hover{
+        transform: rotate(-90deg);
+    }
+
+    .b3:hover{
+        transform : scale(2,2);
+    }
+    .b4:hover{
+        /* transform : skew(20deg,20deg); */
+        transform: skewY(20deg);
+    }
+    .b5:hover{
+        width : 100px;
+
+    }
+</style>
+</head>
+
+<!--body-->
+<body>
+    <h3>위치 변환</h3>
+    <div class="b1"></div>
+    <h3>각도 변환</h3>
+    <div class="b2">1</div>
+    <h3>크기 변환</h3>
+    <div class="b3">1</div>
+    <h3>기울기 변환</h3>
+    <div class="b4">1</div>
+    
+    <h3>크기 변환2</h3>
+    <div class="b5">1</div>
+
+</body>
+<!--script-->
+<script>
+
+
+
+
+</script>
+</html>

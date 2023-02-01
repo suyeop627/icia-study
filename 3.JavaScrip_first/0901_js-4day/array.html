@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="7">
+  <title></title>
+  <style>
+
+  </style>
+</head>
+
+<!--body-->
+
+<body>
+
+</body>
+<!--script-->
+<script>
+  let nums = [1, 2, 3, 4, 5];
+
+  let strs = new Array("one", "two", "three", "four");
+
+  console.log(nums);
+  console.log(strs);
+
+
+  console.log(nums[2])
+  nums[4] = 8;
+
+  console.log(nums);
+  console.log(strs[4])
+
+  let arr = [, , , ,];      //컴마는 4개지만, 마지막 데이터가 없어서 길이는 4개로 출력된다. 빈 배열을 만들때는 컴마의 개수 = 배열의 길이
+  //배열의 크기(공간 개수) : .length
+  console.log(arr.length);
+  console.log(arr);
+  arr.push("3")
+  console.log(arr)
+  console.log(arr.length);
+
+  //빈 배열에 값 추가
+  let fruits = [];
+  fruits.push("바나나");
+  fruits.push("사과");  //앞에서 부터 들어간다.
+  fruits.push("배");
+
+  console.log(fruits)
+
+  fruits.pop();       //뒤에서 부터 뺀다.-기존 배열에서 값을 제거하고 가져옴
+  console.log(fruits);
+
+  fruits.unshift("자몽");   //
+  console.log(fruits);
+  fruits.shift();
+  console.log(fruits);
+
+
+
+  let aArr = [1,2,3,4,5,];        //일반 변수에서는 
+  let bArr = aArr;
+
+  console.log(aArr)
+  console.log(bArr)
+
+  bArr.pop()          //배열은 대입을 할 경우, 원소가 복사되지 않는다. 그냥 그대로 이어진 느낌(shallow copy)=>복사를 하고 싶다면, for문을 사용해서 복사해서 집어넣는 식으로 hard copy를 진행해야함.
+
+  console.log(aArr)     
+  console.log(bArr)
+
+
+  let x = 10          //배열이 아닌 경우, 어떤 변수를 다른 변수에 넣었을때, 복제돼서 저장됨(hard copy)
+  let y = x
+  console.log (x)
+  console.log (y)
+  y=20
+  console.log (x)
+  console.log (y)
+
+</script>
+
+</html>

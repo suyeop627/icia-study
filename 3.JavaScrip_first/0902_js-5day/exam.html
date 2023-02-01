@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KimSuyeop">
+  <meta name="date" content="3">
+  <title></title>
+  <style>
+* {
+  margin : 0;
+  padding : 0;
+  text-align: center;
+}
+#text {
+  height : 100px;
+  font-size: 70px;
+  font-family: cursive;
+}
+#stuNum {
+  width : 300px;
+  height : 30px;
+  border : 1px solid black;
+  border-radius: 10px;
+  margin-top : 60px;
+
+}
+button { 
+  height : 30px;
+  width : 70px;
+  border : 1px solid black;
+  border-radius: 10px;
+  margin : 30px 30px 0 0 ;
+}
+
+
+
+#space {
+  margin-top : 30px;
+}
+
+  </style>
+</head>
+
+<!--body-->
+
+<body>
+  <div id="text">
+    <h2></h2>
+  </div>
+  <input id="stuNum" type="number" placeholder="추가할 학생 수를 입력해주세요." autofocus>
+  <button>추가</button><br>
+  <button>합산</button>
+  <button>평균</button>
+  <button>초기화</button>
+  <div id="space"></div>
+</body>
+<!--script-->
+<script>
+  const text = document.getElementById("text");
+  const btns = document.getElementsByTagName("button");
+  const stuNum = document.getElementById("stuNum")
+
+
+
+  console.log(btns);
+
+  const sp = document.getElementById("space");
+
+
+  btns[0].addEventListener("click", function () {
+
+      for(i = 1; i<=stuNum.value ;i++){
+
+      let ptag = document.createElement("p");
+      let tn = document.createTextNode("값 입력 : ");
+      let itag = document.createElement("input");
+
+
+      itag.type = "number";
+      itag.className = "nin";
+      itag.value = "100";
+          itag.remove
+
+      
+   
+      ptag.appendChild(tn);
+      ptag.appendChild(itag);
+
+      sp.appendChild(ptag);
+
+    }
+    stuNum.value=""
+
+  });
+
+
+
+  btns[1].addEventListener("click", function () {
+    const inputs = document.querySelectorAll(".nin");
+    console.log(inputs);
+
+    let sum = 0;  //합산 값 저장
+    for (let v of inputs) {
+      sum += Number(v.value)
+    }
+    text.innerHTML = `점수의 총 합은 ${sum}점 입니다.`
+  })
+
+
+
+  btns[2].addEventListener("click", function () {
+    const inputs = document.querySelectorAll(".nin");
+    console.log(inputs);
+
+    let sum = 0;  //합산 값 저장
+    for (let v of inputs) {
+      sum += Number(v.value)
+    }
+    let avg = sum / inputs.length
+    text.innerHTML = `평균 점수는 ${avg}점 입니다.`
+  })
+
+btns[3].addEventListener("click", function(){
+  // location.href="exam.html"
+  sp.innerHTML="";
+  text.innerHTML="";
+  
+});
+
+
+
+
+</script>
+
+</html>

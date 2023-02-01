@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="prm" onclick="ckbtn()">프로미스</button>
+</body>
+<script>
+  const promi = (param) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (param == 'suc') {
+          resolve("성공");
+        } else {
+          reject("실패");
+        }
+      }, 1000);
+    })
+  }
+  //판단을 내리는데, 1초 후에 결과를 반환함.
+
+
+  //위의 화살표 함수를 일반 함수로 작성했을 때의 모습
+  const promi2 = function (param) {
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        if (param == 'suc') {
+          resolve("성공");
+        } else {
+          reject("실패");
+        }
+      }, 1000);
+    });
+  };
+
+
+  function ckbtn() {
+    let i = prompt("입력");
+    promi(i)
+    .then(v=>console.log(v))//resolve가 실행 됐을 때의 결과값이 v에 들어온다.
+    .catch(e => console.log(e))//resect가 실행됐을 때의 결과값이 e에 들어온다.
+    .finally(console.log("프로미스 끝"));
+  }
+</script>
+
+</html>

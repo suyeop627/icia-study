@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href=".ico">
+    <title>조건 연산자</title>
+
+
+</head>
+<!--body-->
+<body>
+    
+    
+</body>
+<!--script-->
+<script>
+    //조건(삼항)연산자
+    //(조건식) ? 참(true)일때 값 : 거짓(false)일때 값 ; 
+    var dhAge = 34;
+    var jbAge = 28;
+
+    var result ; 
+    result = (dhAge<jbAge) ? '0' : '1' ;
+    console.log("result : " + result);
+    console.log("result타입 : " + typeof(result));
+
+    result = (dhAge>jbAge) ? 0 : 1 ;
+    console.log("resutl : "+ result);   
+    console.log("result타입 : " + typeof(result));
+
+
+    var num = 10;
+    var resultEven;
+
+    //Q. 조건 연산자를 사용해서 num이 짝수일 경우에는 true 출력
+    //num이 홀수인 경우에는 false 출력하는 조건 연산자를 작성
+
+    // (1)산술연산자 : num % 2
+    // (2)비교연산자 : ==0
+    // (3)조건연산자 : (num % 2==0) ? 'true' : 'false' ;
+
+
+resultEven = (num % 2==0) ? true : false ;
+
+console.log("resultEven : " + resultEven);
+console.log("resultEven타입 : " + typeof(resultEven));
+
+</script>
+</html>

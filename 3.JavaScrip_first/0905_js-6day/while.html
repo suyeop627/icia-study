@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="1">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+  <button>시작</button>
+</body>
+<!--script-->
+<script>
+  const btn = document.querySelector("button");
+  btn.addEventListener("click", run);
+
+  /*
+  대화창 예제
+
+  function run(){
+
+    //대화창(경고창, 확인창, 입력창)
+    //경고창 : alert("문자열");   - 일방적으로 유저에게 알려주기 위해 사용.
+    //확인창 : confirm("문자열"); - true or false를 입력받기위해 사용 (입력 없이 확인 -> 빈 문자열. 취소->null)
+    //입력창 : prompt("문자열");  - 직접 값을 입력받기 위해 사용
+
+    let val = confirm("확인을 누르세요"); 
+    console.log(val);
+    if(val){
+      alert("확인을 눌렀습니다.");
+    }
+    else{
+      alert("취소를 눌렀습니다.")
+    }
+
+
+    let val = prompt("값을 입력하세요.");
+    console.log(val);
+    if(val == ""){
+      alert("값을 입력하세요");
+      prompt("값을 입력하세요.");
+    } else if(val == null) {
+      alert("취소하셨습니다.");
+    } else {
+      alert(`입력한 값은 ${val}입니다.`);
+    }
+}
+*/
+
+let sum;
+function run(){
+  sum=0;  
+  /*let val = prompt("숫자를 입력하세요. 누적을 중지할 경우 취소버튼을 누르세요.");        //()안에서 줄바꿈하면 에러남. +로 연결해서 개행하거나 하지 말것.
+//최초의 한번은 입력을 받아야 하는 구조. 만약, 입력여부에 따라서 반복문의 실행여부가 결정된다면, 옆의 while문 처럼 입력받는 부분과 while문을 나눠서 작성하는 것이 적절함.
+  while(val !=null){      //값이 null로 들어오면 멈추도록
+    sum +=Number(val);    //string으로 값을 받아서 number로 변환
+    val = prompt();
+  }
+  alert(`입력한 값들의 총합은 ${sum}입니다.`)*/
+  let val;
+    do{
+        val = prompt("숫자를 입력하세요. 누적을 중지할 경우 취소버튼을 누르세요.")    //만약, 입력여부에 따라서 반복문의 실행여부가 결정된다면, do, while문으로 작성하기 어려움.
+        sum += Number(val);
+    } while (val !=null);
+
+    alert(`입력한 값들의 총합은 ${sum}입니다.`)
+};
+  
+</script>
+</html>

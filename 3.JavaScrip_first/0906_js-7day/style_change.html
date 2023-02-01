@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--head-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="KimSuyeop">
+<meta name="date" content="5">
+<title></title>
+<style>
+
+</style>
+</head>
+
+<!--body-->
+<body>
+  <div>BOX</div>
+</body>
+<!--script-->
+<script>
+const divs = document.querySelector("div")
+//JS로 CSS를 수정할 수는 있지만, CSS로 하는게 보기도 좋고 쓰기도 편함.
+//css에서 하이픈으로 이어져 있던거는 카멜케이스로 변경해서 사용.
+//background-color => backgroundColor
+//지정할 값은 number나 string에 상관없이 다 string으로 입력해야한다.
+
+divs.style.backgroundColor = "red";
+divs.style.width = "100px";
+divs.style.height = "300px";
+divs.style.borderWidth="2px";
+divs.style.borderStyle = "dotted";
+divs.style.borderColor = "green";
+divs.style.fontSize = "20px";
+</script>
+</html>

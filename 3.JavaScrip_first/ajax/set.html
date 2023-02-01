@@ -1,0 +1,58 @@
+!<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+<body>
+  <p id="test1" class="aaa">문자열 1</p>
+  <p id="test2" >문자열 2</p>
+
+  <input id="txt" type="text" value="홍길동" >
+  
+  <input id="chk1" type="checkbox" value="music" checked>음악
+  <input id="chk2" type="checkbox" value="movie">영화
+  <a href="#">네이버</a>
+  <br>
+  <input type="button" onclick="check()" value="체크">
+  <button>버튼</button>
+
+
+  <script>
+  
+    $('#chk1').attr('checked', false);//체크박스 해제
+    $('#chk2').attr('checked', true);//체크박스 선택
+
+    //체크박스에 실시간 체크 상태
+    console.log($('#chk1').attr('checked')) //undefined
+    console.log($('#chk2').attr('checked')) //checked
+
+    console.log($('#chk1').prop('checked')) //false
+    console.log($('#chk2').prop('checked')) //ture
+
+
+    console.log($('#chk1'))
+
+   
+
+
+
+
+
+
+
+
+
+    console.log($('#test1')); //jquery 객체(js객체 + jq메소드) 반환
+    console.log($('#test1')[0]); //js객체를 선택하는 방법1
+    console.log($('#test1').get(0)); //js객체를 선택하는 방법1
+    
+    
+  
+  </script>
+</body>
+</html>

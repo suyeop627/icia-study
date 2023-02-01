@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>HOME</h1>
+<fieldset>
+    <legend>제품 등록</legend>
+    <table>
+        <form th:action="@{inputProd}">
+            <tr>
+                <th width="100">제품명</th>
+                <td width="200"><input type="text" name="pname"></td>
+            </tr>
+            <tr>
+                <th>가격</th>
+                <td><input type="number" name="price"></td>
+            </tr>
+            <tr>
+                <th>수량</th>
+                <td><input type="number" name="amount"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <input type="submit" value="전송">
+                </td>
+            </tr>
+        </form>
+    </table>
+</fieldset>
+<hr>
+<h2>제품 목록</h2>
+<table border="1">
+    <tr>
+        <th width="50">NO.</th>
+        <th width="100">제품명</th>
+        <th width="150">등록일</th>
+    </tr>
+    <th:block th:if="${#lists.isEmpty(pList)}">
+        <td colspan="5" style="text-align: center">
+            등록된 제품이 없습니다.
+        </td>
+    </th:block>
+    <th:block th:unless="${#lists.isEmpty(pList)}">
+        <th:block th:each="pitem:${pList}">
+            <tr>
+                <td th:text="${pitem.pnum}"></td>
+                <td th:text="${pitem.pname}"></td>
+<!--                milli second까지 저장됐으므로, 형식을 변환해서 출력-->
+<!--                dates.format(날짜데이터, '형식')-->
+                <td th:text="${#dates.format(pitem.rdate, 'yyyy-MM-dd')}"></td>
+            </tr>
+        </th:block>
+    </th:block>
+</table>
+</body>
+</html>

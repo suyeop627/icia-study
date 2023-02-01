@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js 프레임워크 강좌 사이트</title>
+</head>
+<body>
+    <h3>iframe을 사용한 공간 분할</h3>
+    <div style="background: yellow;"> 
+    <span>
+        <a href="iframe_intro.html" target="if_a">인사말</a> |
+    </span>
+    <span>
+        <a href="iframe_lecture.html" target="if_a">강의소개</a> |
+    </span>
+    <span>
+        <a href="iframe_info.html" target="if_a">강사 소개</a> |
+    </span>
+    <span>
+        <a href="http://icia.co.kr" target="if_b">교육원 홈페이지</a> |
+    </span>
+    </div>
+    <p/>
+    
+    <iframe src="iframe_basic.html" width="300" height="200" name="if_a" 
+        frameborder="0"></iframe> <!--frameborder기본값 1, 0으로 하면 경계 없어짐-->
+    
+    <iframe src="iframe_basic.html" width="300" height="200" name="if_b"
+        scrolling="auto"></iframe> <!--scrolling 기본값 auto, no로 하면 스크롤바 없어짐-->
+
+
+</body>
+</html>

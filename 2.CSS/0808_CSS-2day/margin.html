@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>바깥쪽 여백</title>
+    <style>
+        div#outer1 { 
+            width: 300px;
+            height: 100px;
+            border: 1px solid;
+            margin: 30px auto;
+            padding: 20px
+        }
+        div#inner {
+            width: 230px;
+            height: 30px;
+            background-color: red; 
+            margin: 0 auto; /*margin의 값으로 'auto'를 넣으면 좌 우의 너비를 동일하게 맞출 수 있음
+                                좌/우 값 설정에만 가능. 가운데 정렬 기능과 동일*/
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="outer1">
+        <div id="inner"></div>
+    </div>
+    <div></div>
+</body>
+</html>
